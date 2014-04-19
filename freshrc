@@ -2,15 +2,18 @@
 
 fresh freshshell/fresh bin/fresh --bin
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
+fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 
-fresh bin/\* --bin
+fresh 'bin/*' --bin
 
 # Shell
-fresh shell/aliases/\*
+fresh shell/noninteractive.sh
+fresh 'shell/aliases/*'
+fresh 'shell/config/*'
 
 # Config
 fresh-options --file
-  fresh config/\*
+  fresh 'config/*'
   fresh jasoncodes/dotfiles config/inputrc
   fresh jasoncodes/dotfiles config/tmux.conf
   fresh garybernhardt/dotfiles .githelpers
@@ -22,13 +25,17 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh vim/leader.vim
   fresh twe4ked/dotfiles vim/vundle_before.vim
   fresh vim/vundle.vim
-  fresh vim/plugins/\*.vim
+  fresh 'vim/plugins/*.vim'
   fresh twe4ked/dotfiles vim/vundle_after.vim
   fresh vim/global.vim
-  fresh vim/config/\*.vim
+  fresh 'vim/config/*.vim'
   fresh vim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
 fresh-options
+
+# Fonts
+fresh Lokaltog/powerline font/PowerlineSymbols.otf --file=~/.fonts/PowerlineSymbols.otf
+fresh Lokaltog/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
 
 fresh nojhan/liquidprompt liquidprompt
 
