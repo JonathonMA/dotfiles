@@ -1,28 +1,44 @@
-
 " Misc. config
+set nocompatible
+set backspace=indent,eol,start  " Why would I ever want backspace to not work?
+set scrolloff=3                 " Start scrolling 3 lines before edge
+set showmatch                   " Highlight matching brackets on entry
+set laststatus=2                " Always show status line
+set autoread                    " Sensibly read changed files
+set showcmd                     " Display incomplete commands
+set cursorline                  " Where am I?
+autocmd InsertEnter,InsertLeave * set cul! " Toggle cursorline in insert mode.
+
+" Indentation
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-
 set autoindent
+"set smarttab
+"set cindent
+set foldmethod=indent                      " Fold based on source indentation
+set foldlevelstart=99                      " Expand all folds by default
 
-" Testing
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-set laststatus=2
-set cursorline
-set scrolloff=3
-set showmatch
+" Searching
 set incsearch
 set hlsearch
-set ignorecase smartcase
+set ignorecase
+set smartcase
+
+" Line numbering
 set number
 set relativenumber
-set backspace=indent,eol,start
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+" Colors
+set t_Co=256                  " I use 16-color solarized, but...
+syntax enable
+set background=dark
 
-" Use 256color mode
-" Actually want 16 color mode, but if I ever didn't use solarized...
-set t_Co=256
+let g:solarized_hitrail=1     " highlight trailing whitespace
+call togglebg#map("<F5>")     " F5 toggles background dark/light
+colorscheme solarized
+hi CursorLineNr ctermfg=137   " highlght current line number
+
+"colorscheme hybrid
+"colorscheme jellybeans

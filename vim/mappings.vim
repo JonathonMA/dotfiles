@@ -1,3 +1,6 @@
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 " SEATTLE FUCKEN' STYLE
 map <Leader>s :s/(\([^)]*\))$/ \1/<cr>
 
