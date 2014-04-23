@@ -37,8 +37,6 @@ fresh-options
 fresh Lokaltog/powerline font/PowerlineSymbols.otf --file=~/.fonts/PowerlineSymbols.otf
 fresh Lokaltog/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
 
-fresh nojhan/liquidprompt liquidprompt
-
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
