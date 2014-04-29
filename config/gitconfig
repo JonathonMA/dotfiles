@@ -1,0 +1,36 @@
+# vim: set ft=gitconfig:
+
+[include]
+  path = .gitconfig.local
+[alias]
+	st = status
+	di = diff
+	dc = diff --cached
+[color]
+	ui = auto
+[push]
+	default = simple
+[core]
+  excludesfile = ~/.gitignore
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  dcs = diff --cached --stat
+  amend = commit --amend
+  aa = add --all
+  b = branch
+  pullff = pull --ff-only
+  ds = diff --stat=160,120
+  dh1 = diff HEAD~1
+  head = !git l -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
+[gc]
+  auto = 0
