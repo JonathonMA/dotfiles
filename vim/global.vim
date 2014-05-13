@@ -15,6 +15,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
+filetype indent on
 set foldmethod=indent                      " Fold based on source indentation
 set foldlevelstart=99                      " Expand all folds by default
 
