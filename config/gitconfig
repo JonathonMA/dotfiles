@@ -13,6 +13,7 @@
 [core]
   excludesfile = ~/.gitignore
 [alias]
+  bubble = merge --no-ff
   st = status
   ci = commit
   co = checkout
