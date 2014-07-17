@@ -1,3 +1,5 @@
+set viminfo='100,h
+
 " Misc. config
 set nocompatible
 set backspace=indent,eol,start  " Why would I ever want backspace to not work?
