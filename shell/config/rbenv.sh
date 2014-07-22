@@ -6,6 +6,10 @@ elif command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
 
   # OS X only
-  number_of_cores=`sysctl -n hw.ncpu`
-  bundle config --global jobs `expr $number_of_cores - 1`
+  if grep -q BUNDLE_JOBS ~/.bundle/config; then
+    :
+  else
+    number_of_cores=`sysctl -n hw.ncpu`
+    bundle config --global jobs `expr $number_of_cores - 1`
+  fi
 fi
