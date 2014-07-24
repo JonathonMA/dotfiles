@@ -49,6 +49,13 @@ fresh bltavares/dot-files ctags --file=~/.ctags
 fresh carlosantoniodasilva/dotfiles ackrc --file=~/.ackrc
 fresh config/other/mplayer --file=~/.mplayer/config
 
+# Gitignore
+fresh-options --file=~/.gitignore --marker=#
+  fresh github/gitignore Global/vim.gitignore
+  fresh github/gitignore Global/OSX.gitignore
+  fresh github/gitignore Global/Tags.gitignore
+fresh-options
+
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
