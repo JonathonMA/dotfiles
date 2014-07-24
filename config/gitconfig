@@ -36,5 +36,7 @@
   rim = rebase -i --autosquash origin/master
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+[rebase]
+  autosquash = true
 [gc]
   auto = 0
