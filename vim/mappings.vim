@@ -18,3 +18,5 @@ map <Leader>ts :w\|:!cucumber-web -p rerun<cr>
 map <Leader>trw :w\|:!rspec --tag wip<cr>
 map <Leader>trr :w\|:!rspec %<cr>
 map <Leader>tm :w\|:!ruby -Itest %<cr>
+
+map <Leader>rc :w\|:!rubocop %<cr>
