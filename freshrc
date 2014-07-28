@@ -7,6 +7,10 @@ for file in ~/.bash_profile ~/.bashrc; do
   fresh freshshell/fresh contrib/source-build.sh --file=$file
 done
 
+fresh-options --file=~/.bash_logout
+  fresh shell/logout/*
+fresh-options
+
 fresh 'bin/*' --bin
 
 # Shell
