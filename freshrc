@@ -43,6 +43,7 @@ fresh Lokaltog/powerline font/10-powerline-symbols.conf --file=~/.config/fontcon
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
 fresh carlosantoniodasilva/dotfiles ackrc --file=~/.ackrc
+fresh config/other/mplayer --file=~/.mplayer/config
 
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
