@@ -27,3 +27,6 @@ Bundle 'thoughtbot/vim-rspec.git'
 " Git
 Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-fugitive.git'
+
+" Comments
+Bundle 'tComment'
