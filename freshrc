@@ -26,6 +26,7 @@ fresh-options --file
   fresh garybernhardt/dotfiles .githelpers
 fresh-options
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
+fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 
 # Vim
 fresh-options --file=~/.vimrc --marker=\"
