@@ -18,5 +18,8 @@ prepend_path '/usr/local/sbin'
 append_path '/opt/X11/bin'
 append_path '/usr/games'
 
+prepend_path '/usr/local/opt/coreutils/libexec/gnubin'
+# MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 unset prepend_path
 unset append_path
