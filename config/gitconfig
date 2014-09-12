@@ -36,6 +36,7 @@
   r = !git l -30
   ra = !git r --all
   rim = rebase -i --autosquash origin/master
+  bm = "!f() { git branch $1 origin/master --no-track && git co $1; }; f"
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
 [rebase]
