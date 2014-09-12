@@ -17,6 +17,7 @@
   bubble = merge --no-ff
   fixup = commit --fixup
   st = status
+  ss = show --stat -p
   ci = commit
   co = checkout
   con = rebase --continue
