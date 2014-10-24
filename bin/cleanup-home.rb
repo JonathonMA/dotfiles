@@ -75,6 +75,7 @@ class HomeFilter
     Desktop
     Documents
     Downloads
+    Dropbox
     Library
     VirtualBox\ VMs
     Vagrantfile
