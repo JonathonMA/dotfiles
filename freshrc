@@ -39,6 +39,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh 'vim/config/*.vim'
   fresh vim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
+  fresh vim/nolimit.vim
 fresh-options
 
 # Fonts
