@@ -17,6 +17,7 @@ Bundle 'mileszs/ack.vim.git'
 
 " Language
 Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_initial_foldlevel=99
 Bundle 'depuracao/vim-rdoc'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
