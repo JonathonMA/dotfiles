@@ -26,7 +26,7 @@
   amend = commit --amend
   aa = add --all
   b = branch
-  pullff = pull --ff-only
+  pull = pull --ff-only
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
   head = !git l -1
