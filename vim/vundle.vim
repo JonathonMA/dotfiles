@@ -13,7 +13,7 @@ Bundle 'bling/vim-airline.git'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Navigation
-Bundle 'mileszs/ack.vim.git'
+Bundle 'rking/ag.vim'
 
 " Language
 Bundle 'plasticboy/vim-markdown'
