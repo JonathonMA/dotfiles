@@ -1,0 +1,13 @@
+#!/bin/sh
+case `uname` in
+  Darwin*)
+    echo mac
+    ;;
+  Linux*)
+    echo debian
+    ;;
+  *)
+    echo "FUCK"
+    exit 1
+    ;;
+esac
