@@ -58,6 +58,12 @@ fresh-options --file=~/.gitignore --marker=#
   fresh github/gitignore Global/Tags.gitignore
 fresh-options
 
+# Git aliases
+fresh-options --file=~/.gitconfig --marker=#
+  fresh git/alias_before.gitconfig
+  fresh 'git/aliases/*'
+fresh-options
+
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
