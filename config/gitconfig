@@ -13,7 +13,6 @@
 [core]
   excludesfile = ~/.gitignore
 [alias]
-  since-master = diff --name-only origin/master
   bubble = merge --no-ff
   fixup = commit --fixup
   st = status
