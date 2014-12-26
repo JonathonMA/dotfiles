@@ -20,3 +20,4 @@ map <Leader>trr :w\|:!rspec %<cr>
 map <Leader>tm :w\|:!ruby -Itest %<cr>
 
 map <Leader>rc :w\|:!rubocop %<cr>
+map <Leader>ra :w\|:!rubocop -a %<cr>
