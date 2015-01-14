@@ -31,6 +31,3 @@ Bundle 'tpope/vim-fugitive.git'
 
 " Comments
 Bundle 'tComment'
-
-" Other
-Bundle "vimspell"
