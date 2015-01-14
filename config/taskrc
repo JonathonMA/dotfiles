@@ -1,0 +1,3 @@
+data.location=~/Dropbox/taskwarrior
+
+include /usr/local/Cellar/task/2.4.0/share/doc/task/rc/solarized-dark-256.theme
