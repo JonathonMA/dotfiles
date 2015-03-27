@@ -1,3 +1,7 @@
+if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
+  . /usr/lib/git-core/git-sh-prompt
+fi
+
 function __git_in_repo() { __gitdir > /dev/null; }
 function __git_is_dirty() { git status --porcelain | grep -q .; }
 function __git_dirty() { __git_in_repo && __git_is_dirty && echo "$1"; }
