@@ -38,6 +38,7 @@
   bm = "!f() { git branch $1 origin/master --no-track && git co $1; }; f"
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+  lb = !git l origin/master..@
 [rebase]
   autosquash = true
 [gc]
