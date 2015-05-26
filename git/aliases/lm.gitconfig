@@ -1,0 +1,1 @@
+  lm = "!f() { git checkout master && git reset --hard origin/master; }; f"
