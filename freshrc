@@ -12,6 +12,7 @@ fresh-options --file=~/.bash_logout
 fresh-options
 
 fresh 'bin/*' --bin
+fresh JonathonMA/junkscripts 'bin/*' --bin
 
 # Shell
 fresh shell/noninteractive.sh
