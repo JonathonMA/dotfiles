@@ -29,6 +29,12 @@ fresh-options
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 
+[ -d xdg-config ] && for dir in xdg-config/*/; do
+  base="`basename "$dir"`"
+  dir="`dirname "$dir"`/`basename "$dir"`"
+  fresh "$dir" --file="~/.config/$base/"
+done
+
 # Vim
 fresh-options --file=~/.vimrc --marker=\"
   fresh vim/leader.vim
