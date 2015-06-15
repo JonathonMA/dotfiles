@@ -32,9 +32,13 @@ fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 ln -sf $FRESH_LOCAL/xdg-config/* ~/.config/
 
 # Vim
-fresh-options --file=~/.vimrc --marker=\"
+
+fresh --file=~/.config/vim/xdg.vim vim/xdg.vim
+mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/vim/"{undo,swap,backup}
+
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc --marker=\"
   fresh vim/leader.vim
-  fresh twe4ked/dotfiles vim/vundle_before.vim
+  fresh vim/vundle_before.vim
   fresh vim/vundle.vim
   fresh 'vim/plugins/*.vim'
   fresh twe4ked/dotfiles vim/vundle_after.vim
