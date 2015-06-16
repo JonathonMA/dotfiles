@@ -2,7 +2,6 @@
 set viminfo='100,h,n$XDG_CACHE_HOME/vim/viminfo
 
 " Misc. config
-set nocompatible
 set backspace=indent,eol,start  " Why would I ever want backspace to not work?
 set scrolloff=3                 " Start scrolling 3 lines before edge
 set showmatch                   " Highlight matching brackets on entry
