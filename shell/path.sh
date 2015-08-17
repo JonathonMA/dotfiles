@@ -21,5 +21,9 @@ append_path '/usr/games'
 prepend_path '/usr/local/opt/coreutils/libexec/gnubin'
 # MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+if [ -f "$HOME/.bashrc.local.path" ]; then
+  source "$HOME/.bashrc.local.path"
+fi
+
 unset prepend_path
 unset append_path
