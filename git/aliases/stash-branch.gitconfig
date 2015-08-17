@@ -1,0 +1,1 @@
+  stash-branch = "!f() { git checkout -b stash/"$1" && git add --all . && git commit -m WIP && git checkout -; }; f"
