@@ -1,0 +1,3 @@
+  current-branch = rev-parse --abbrev-ref HEAD
+  backup-branch = "!f() { pre=$(git current-branch) && git checkout -b ${pre}-BACKUP && git checkout ${pre}; }; f"
+  restore-branch = "!f() { pre=$(git current-branch) && git reset --hard ${pre}-BACKUP && git branch -d ${pre}-BACKUP; }; f"
