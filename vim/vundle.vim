@@ -21,6 +21,7 @@ let g:vim_markdown_initial_foldlevel=99
 Bundle 'depuracao/vim-rdoc'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mtscout6/vim-cjsx'
 Bundle 'tpope/vim-rails.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec.git'
