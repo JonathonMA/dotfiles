@@ -33,3 +33,6 @@ Bundle 'tpope/vim-fugitive.git'
 
 " Comments
 Bundle 'tComment'
+
+" Standalone
+Bundle 'qpkorr/vim-renamer'
