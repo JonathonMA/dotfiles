@@ -25,6 +25,7 @@ Bundle 'mtscout6/vim-cjsx'
 Bundle 'tpope/vim-rails.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec.git'
+Bundle 'elixir-lang/vim-elixir'
 
 " Git
 Bundle 'tpope/vim-endwise.git'
