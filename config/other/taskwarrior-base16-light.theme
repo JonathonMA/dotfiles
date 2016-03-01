@@ -1,0 +1,98 @@
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# Base16 mapping: Base colors, extra accents, regular colors
+#
+# Solarized | Taskwarrior
+# --------- | -----------
+# base03    | color0
+# base02    | color10
+# base01    | color11
+# base00    | color8
+# base0     | color12
+# base1     | color7
+# base2     | color13
+# base3     | color15
+# --------- | -----------
+# orange    | color9
+# magenta   | color14
+# --------- | -----------
+# red       | color1
+# green     | color2
+# yellow    | color3
+# blue      | color4
+# violet    | color5
+# cyan      | color6
+
+# General decoration
+color.label=color8 on color15
+color.label.sort=
+color.alternate=color11 on color13
+
+# Light-16 adjusted slightly to base16
+
+color.header=color15 on color0
+color.footnote=cyan
+color.warning=red
+color.error=color13 on red
+color.debug=blue
+
+# Task state
+color.completed=
+color.deleted=
+color.active=yellow on color0
+color.recurring=
+color.scheduled=color15 on cyan
+color.until=
+color.blocking=red
+color.blocked=blue
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=
+color.uda.priority.M=
+color.uda.priority.L=color0
+
+# Tags
+color.tag.next=yellow on color0
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=color13 on green
+color.due.today=color13 on yellow
+color.overdue=color13 on red
+
+# Report: burndown
+color.burndown.pending=color13 on red
+color.burndown.started=color13 on yellow
+color.burndown.done=color13 on green
+
+# Report: history
+color.history.add=color10 on red
+color.history.done=color10 on green
+color.history.delete=color10 on yellow
+
+# Report: summary
+color.summary.bar=color13 on green
+color.summary.background=color11 on color13
+
+# Command: calendar
+color.calendar.due=color13 on green
+color.calendar.due.today=yellow on blue
+color.calendar.holiday=color15 on yellow
+color.calendar.overdue=color13 on red
+color.calendar.today=blue
+color.calendar.weekend=color11 on color13
+color.calendar.weeknumber=blue
+
+# Command: sync
+color.sync.added=green
+color.sync.changed=yellow
+color.sync.rejected=red
+
+# Command: undo
+color.undo.before=yellow
+color.undo.after=green
+
