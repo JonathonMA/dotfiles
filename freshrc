@@ -73,6 +73,13 @@ fresh-options --file=~/.gitconfig --marker=#
   fresh 'git/aliases/*'
 fresh-options
 
+# Private
+if [ ! -d ~/.dotfiles/private ]; then
+  git clone ~/Dropbox/repos/dotfiles-private ~/.dotfiles/private
+fi
+
+fresh --file "private/config/*"
+
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
