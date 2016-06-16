@@ -1,0 +1,1 @@
+  delete-merged-branches = "!f() { git other-branches --merged origin/master | xargs -n 1 git branch -d; }; f"

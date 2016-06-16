@@ -1,0 +1,1 @@
+  outstanding-branches = "!f() { git branch | grep -vw master | grep -v '^*' | wc -l; }; f"

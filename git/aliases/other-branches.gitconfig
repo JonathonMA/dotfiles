@@ -1,0 +1,1 @@
+  other-branches = "!f() { git branch \"$@\" | grep -v \"^[*]\" | cut -b 3-; }; f"
