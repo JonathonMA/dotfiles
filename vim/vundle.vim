@@ -6,6 +6,7 @@ Bundle 'ConradIrwin/vim-bracketed-paste'
 Bundle 'oryband/vim-colors-solarized'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'chriskempson/base16-vim'
 
 " Visual
 let g:airline_powerline_fonts = 1
