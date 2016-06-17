@@ -29,6 +29,7 @@ fresh-options
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 
+mkdir -p ~/.config/
 ln -sf $FRESH_LOCAL/xdg-config/* ~/.config/
 
 # Vim
