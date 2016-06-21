@@ -18,6 +18,7 @@ fresh JonathonMA/junkscripts 'bin/*' --bin
 fresh shell/noninteractive.sh
 fresh 'shell/aliases/*'
 fresh 'shell/config/*'
+fresh chriskempson/base16-shell base16-solarized.dark.sh
 
 # Config
 fresh-options --file
