@@ -27,6 +27,9 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec.git'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 
 " Git
 Bundle 'tpope/vim-endwise.git'
