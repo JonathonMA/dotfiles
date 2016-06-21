@@ -38,5 +38,9 @@ Bundle 'tpope/vim-fugitive.git'
 " Comments
 Bundle 'tComment'
 
+" Typography
+Bundle 'kana/vim-textobj-user'
+Bundle 'reedes/vim-textobj-quote'
+
 " Standalone
 Bundle 'qpkorr/vim-renamer'
