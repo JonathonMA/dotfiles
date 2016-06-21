@@ -51,8 +51,8 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc --marker=\"
 fresh-options
 
 # Fonts
-fresh Lokaltog/powerline font/PowerlineSymbols.otf --file=~/.fonts/PowerlineSymbols.otf
-fresh Lokaltog/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+fresh powerline/powerline font/PowerlineSymbols.otf --file=~/.local/share/fonts/PowerlineSymbols.otf
+fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
 
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
