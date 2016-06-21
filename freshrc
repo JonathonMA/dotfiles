@@ -60,7 +60,9 @@ fresh bltavares/dot-files ctags --file=~/.ctags
 fresh carlosantoniodasilva/dotfiles ackrc --file=~/.ackrc
 fresh config/other/mplayer --file=~/.mplayer/config
 
-fresh config/other/taskwarrior-base16-light.theme --file=~/.taskrc
+# Temporary, this file is distributed with taskwarrior but in different
+# locations on OS X to linux
+fresh config/other/dark-16.theme --file=~/.taskrc
 
 # Gitignore
 fresh-options --file=~/.gitignore --marker=#
