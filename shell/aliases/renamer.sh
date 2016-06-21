@@ -1,0 +1,1 @@
+alias renamer='vim +:Renamer'
