@@ -36,5 +36,5 @@ set t_Co=256                  " I use 16-color solarized, but...
 syntax enable
 set background=dark
 
-set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-default
