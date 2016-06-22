@@ -10,7 +10,11 @@ Bundle 'chriskempson/base16-vim'
 
 " Visual
 let g:airline_powerline_fonts = 1
-Bundle 'bling/vim-airline.git'
+let g:airline_theme = 'solarized'
+let g:solarized_base16 = 1
+let g:airline_solarized_normal_green = 1
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Navigation
