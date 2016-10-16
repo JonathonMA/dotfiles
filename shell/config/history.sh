@@ -23,4 +23,3 @@ _bash_history_sync() {
   builtin history -r
 }
 
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}_bash_history_sync"
