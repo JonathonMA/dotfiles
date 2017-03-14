@@ -18,7 +18,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Navigation
-Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
 
 " Language
 Bundle 'plasticboy/vim-markdown'
