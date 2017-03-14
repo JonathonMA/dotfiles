@@ -1,3 +1,6 @@
+" Navigation
+Bundle 'mileszs/ack.vim'
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
@@ -8,4 +11,10 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  let g:ackprg = 'ag --vimgrep --smart-case'
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack
 endif

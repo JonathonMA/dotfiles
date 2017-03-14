@@ -17,9 +17,6 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'airblade/vim-gitgutter.git'
 
-" Navigation
-Bundle 'rking/ag.vim'
-
 " Language
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_initial_foldlevel=99
