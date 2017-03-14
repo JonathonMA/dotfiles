@@ -45,7 +45,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc --marker=\"
   fresh vim/vundle_before.vim
   fresh vim/vundle.vim
   fresh 'vim/plugins/*.vim'
-  fresh twe4ked/dotfiles vim/vundle_after.vim
+  fresh twe4ked/dotfiles vim/vundle_after.vim --ref=0f47bfef
   fresh vim/global.vim
   fresh 'vim/config/*.vim'
   fresh vim/mappings.vim
