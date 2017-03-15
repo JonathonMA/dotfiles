@@ -69,7 +69,7 @@ fresh config/other/dark-16.theme --file=~/.taskrc
 # Gitignore
 fresh-options --file=~/.gitignore --marker=#
   fresh github/gitignore Global/Vim.gitignore
-  fresh github/gitignore Global/OSX.gitignore
+  fresh github/gitignore Global/macOS.gitignore
   fresh github/gitignore Global/Tags.gitignore
 fresh-options
 
