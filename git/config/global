@@ -1,0 +1,14 @@
+# vim: set ft=gitconfig:
+
+[include]
+  path = .gitconfig.local
+[color]
+  ui = auto
+[push]
+  default = simple
+[core]
+  excludesfile = ~/.gitignore
+[rebase]
+  autosquash = true
+[gc]
+  auto = 0

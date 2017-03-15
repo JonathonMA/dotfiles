@@ -27,8 +27,8 @@ fresh-options --file
   fresh 'config/*'
   fresh jasoncodes/dotfiles config/inputrc
   fresh jasoncodes/dotfiles config/tmux.conf
-  fresh garybernhardt/dotfiles .githelpers
 fresh-options
+fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 
@@ -77,6 +77,7 @@ fresh-options
 fresh-options --file=~/.gitconfig --marker=#
   fresh git/alias_before.gitconfig
   fresh 'git/aliases/*'
+  fresh 'git/config/*'
 fresh-options
 
 # Private

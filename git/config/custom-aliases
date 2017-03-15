@@ -1,0 +1,7 @@
+# vim: set ft=gitconfig:
+
+[alias]
+  bm = !git branch-master
+  bmr = !git branch-master-regular
+  pu = !git push-upstream
+  lm = !git local-master

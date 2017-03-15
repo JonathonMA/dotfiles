@@ -1,0 +1,11 @@
+# vim: set ft=gitconfig:
+
+[alias]
+  h = !git head
+  head = !git l -1
+  hp = "!. ~/.local/share/git/helpers && show_git_head"
+  l = "!. ~/.local/share/git/helpers && pretty_git_log"
+  la = !git l --all
+  lb = !git l origin/master..@
+  r = !git l -30
+  ra = !git r --all
