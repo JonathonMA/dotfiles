@@ -1,0 +1,1 @@
+  local-master = "!f() { git checkout master && git reset --hard origin/master; }; f"

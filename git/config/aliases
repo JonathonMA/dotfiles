@@ -1,0 +1,15 @@
+# vim: set ft=gitconfig:
+
+[alias]
+  aa = add --all
+  b = branch
+  ci = commit
+  co = checkout
+  dc = diff --cached
+  dcs = diff --cached --stat
+  dh1 = diff HEAD~1
+  di = diff
+  ds = diff --stat=160,120
+  pull = pull --ff-only
+  ss = show --stat -p
+  st = status

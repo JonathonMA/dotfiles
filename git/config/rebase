@@ -1,0 +1,5 @@
+# vim: set ft=gitconfig:
+
+[alias]
+  rim = rebase -i --autosquash origin/master
+  con = rebase --continue
