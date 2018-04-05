@@ -34,6 +34,8 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
+Bundle 'pksunkara/vim-dasm'
+Bundle 'vim-scripts/asmM6502.vim'
 
 " Git
 Bundle 'tpope/vim-endwise.git'

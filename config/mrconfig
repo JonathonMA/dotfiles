@@ -1,0 +1,26 @@
+[.local/opt/chruby]
+checkout = git clone --depth=1 'git@github.com:postmodern/chruby.git' chruby
+
+# [.local/opt/chnode]
+# checkout = git clone --depth=1 'https://github.com/moll/sh-chnode' chnode
+
+[.local/opt/chnode]
+checkout = git clone --depth=1 'git://github.com/colinrymer/chnode.git' chnode
+
+[.local/opt/nvm]
+checkout = git clone --depth=1 'git://github.com/creationix/nvm.git' nvm
+
+[.local/opt/ruby-build]
+checkout = git clone --depth=1 'git://github.com/sstephenson/ruby-build.git' ruby-build
+
+[.local/opt/nave]
+checkout = git clone --depth=1 'git://github.com/isaacs/nave.git' nave
+
+[.local/opt/node-build]
+checkout = git clone --depth=1 'git://github.com/riywo/node-build.git' node-build
+
+# node-build --definitions
+# node-build <version> ~/.local/opt/nodes
+#
+# ~/.local/opt/node-build/bin/node-build --definitions
+# VERSION=8.2.1 ~/.local/opt/node-build/bin/node-build $VERSION ~/.local/opt/nodes/$VERSION

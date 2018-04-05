@@ -1,4 +1,4 @@
-if command -v docker-machine >/dev/null 2>&1; then
+if false; then #command -v docker-machine >/dev/null 2>&1; then
   docker() {
     if [ -z "$DOCKER_HOST" ]; then
       eval "$(dinghy shellinit)"
