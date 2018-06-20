@@ -1,3 +1,6 @@
+" Navigation
+Bundle 'mileszs/ack.vim'
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
