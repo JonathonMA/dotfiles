@@ -13,6 +13,7 @@ fresh-options
 
 fresh 'bin/*' --bin
 fresh JonathonMA/junkscripts 'bin/*' --bin
+fresh garybernhardt/dotfiles bin/color-git-log --bin
 
 # Shell
 fresh shell/noninteractive.sh
