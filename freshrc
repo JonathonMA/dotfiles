@@ -35,22 +35,21 @@ fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 mkdir -p ~/.config/
 ln -sf $FRESH_LOCAL/xdg-config/* ~/.config/
 
-# Vim
+# NVim
 
-fresh --file=~/.config/vim/xdg.vim vim/xdg.vim
-mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/vim/"{undo,swap,backup}
+fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.vim
 
-fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc --marker=\"
-  fresh vim/leader.vim
-  fresh vim/vundle_before.vim
-  fresh vim/vundle.vim
-  fresh 'vim/plugins/*.vim'
-  fresh twe4ked/dotfiles vim/vundle_after.vim --ref=0f47bfef
-  fresh vim/global.vim
-  fresh 'vim/config/*.vim'
-  fresh vim/mappings.vim
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
+  fresh nvim/leader.vim
+  fresh nvim/plug_before.vim
+  fresh nvim/plug.vim
+  fresh 'nvim/plugins/*.vim'
+  fresh nvim/plug_after.vim
+  fresh nvim/global.vim
+  fresh 'nvim/config/*.vim'
+  fresh nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
-  fresh vim/exrc.vim
+  fresh nvim/exrc.vim
 fresh-options
 
 # Fonts

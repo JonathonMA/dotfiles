@@ -1,4 +1,3 @@
-alias vundle='vim +BundleInstall +qall'
 alias apt='sudo aptitude'
 alias ll='ls -alF'
 alias la='ls -A'
