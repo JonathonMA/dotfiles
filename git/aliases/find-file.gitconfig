@@ -1,0 +1,1 @@
+  find-files = "!f() { git ls-files | rg \"$1\"; }; f"
