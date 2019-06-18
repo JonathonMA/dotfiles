@@ -1,1 +1,3 @@
-  since-master = diff --name-only origin/master
+  since = diff --name-only
+  since-master = !git since origin/master
+  since-develop = !git since origin/develop

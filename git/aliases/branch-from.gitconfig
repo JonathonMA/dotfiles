@@ -1,0 +1,8 @@
+  branch-from = "!f() { git branch $2 origin/$1 --no-track && git co $2; }; f"
+  branch-from-regular = "!f() { git branch-from $1 "$2-`date +%Y%m%d`"; }; f"
+
+  branch-master = !git branch-from master
+  branch-master-regular = !git branch-from-regular master
+
+  branch-develop = !git branch-from develop
+  branch-develop-regular = !git branch-from-regular develop

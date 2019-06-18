@@ -2,4 +2,5 @@
 
 [alias]
   rim = rebase -i --autosquash origin/master
+  rid = rebase -i --autosquash origin/develop
   con = rebase --continue

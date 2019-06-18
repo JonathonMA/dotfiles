@@ -1,2 +1,0 @@
-  branch-master = "!f() { git branch $1 origin/master --no-track && git co $1; }; f"
-  branch-master-regular = "!f() { git branch-master "$1-`date +%Y%m%d`"; }; f"

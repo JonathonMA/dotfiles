@@ -3,6 +3,8 @@
 [alias]
   bm = !git branch-master
   bmr = !git branch-master-regular
+  bd = !git branch-develop
+  bdr = !git branch-develop-regular
   pu = !git push-upstream
   lm = !git local-master
   ff = !git find-files
