@@ -35,8 +35,9 @@ fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
 
-mkdir -p ~/.config/
-ln -sf $FRESH_LOCAL/xdg-config/* ~/.config/
+mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
+find $FRESH_LOCAL/xdg/config/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.config/ \;
+find $FRESH_LOCAL/xdg/share/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.local/share/ \;
 
 # NVim
 
