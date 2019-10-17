@@ -97,8 +97,6 @@ if [ ! -e ~/.gitconfig.local ]; then
     echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
 fi
 
-ln -sf ~/.gitignore ~/.agignore
-
 if [ ! -d ~/.local/share/asdf ]; then
   (
     cd ~/.local/share
