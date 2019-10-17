@@ -29,11 +29,10 @@ fresh 'shell/preexec.sh'
 fresh-options --file
   fresh 'config/*'
   fresh jasoncodes/dotfiles config/inputrc
-  fresh jasoncodes/dotfiles config/tmux.conf
 fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
-fresh seebi/tmux-colors-solarized tmuxcolors-dark.conf --file=~/.tmux.conf
+fresh Kraust/base16-tmux base16.tmuxtheme --file=~/.tmux.conf
 
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
 find $FRESH_LOCAL/xdg/config/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.config/ \;
