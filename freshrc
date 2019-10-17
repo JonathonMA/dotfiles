@@ -13,6 +13,9 @@ fresh-options
 
 fresh 'bin/*' --bin
 fresh JonathonMA/junkscripts 'bin/*' --bin
+fresh jasoncodes/ctrlp-modified.vim lib/branch.sh --bin
+fresh jasoncodes/ctrlp-modified.vim lib/branch_modified.sh --bin
+fresh jasoncodes/ctrlp-modified.vim lib/modified.sh --bin
 
 # Shell
 fresh shell/noninteractive.sh
