@@ -18,19 +18,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Language
-Bundle 'plasticboy/vim-markdown'
-let g:vim_markdown_initial_foldlevel=99
-Bundle 'depuracao/vim-rdoc'
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mtscout6/vim-cjsx'
-Bundle 'tpope/vim-rails.git'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'thoughtbot/vim-rspec.git'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
+Bundle 'sheerun/vim-polyglot'
 
 " Git
 Bundle 'tpope/vim-endwise.git'
