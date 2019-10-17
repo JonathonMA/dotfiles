@@ -100,3 +100,10 @@ if [ ! -e ~/.gitconfig.local ]; then
 fi
 
 ln -sf ~/.gitignore ~/.agignore
+
+if [ ! -d ~/.local/share/asdf ]; then
+  (
+    cd ~/.local/share
+    mr checkout
+  )
+fi
