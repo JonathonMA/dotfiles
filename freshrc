@@ -63,10 +63,6 @@ fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontco
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
 
-# Temporary, this file is distributed with taskwarrior but in different
-# locations on OS X to linux
-fresh config/other/dark-16.theme --file=~/.taskrc
-
 # Gitignore
 fresh-options --file=~/.gitignore --marker=#
   fresh github/gitignore Global/Vim.gitignore
