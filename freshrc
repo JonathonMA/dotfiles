@@ -84,8 +84,8 @@ fresh-options --file=~/.gitconfig --marker=#
 fresh-options
 
 # Private
-if [ ! -d ~/.dotfiles/private ]; then
-  git clone ~/Dropbox/repos/dotfiles-private ~/.dotfiles/private
+if [ ! -d ~/.local/share/dotfiles/private ]; then
+  git clone ~/Dropbox/repos/dotfiles-private ~/.local/share/dotfiles/private
 fi
 
 if [ ! -e ~/.gitconfig.local ]; then
