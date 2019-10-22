@@ -62,7 +62,6 @@ fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontco
 
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
-fresh carlosantoniodasilva/dotfiles ackrc --file=~/.ackrc
 
 # Temporary, this file is distributed with taskwarrior but in different
 # locations on OS X to linux
