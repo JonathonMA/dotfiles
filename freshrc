@@ -4,7 +4,7 @@ fresh freshshell/fresh bin/fresh --bin
 for file in ~/.bash_profile ~/.bashrc; do
   fresh shell/noninteractive.sh --file=$file
   fresh shell/path.sh --file=$file
-  fresh freshshell/fresh contrib/source-build.sh --file=$file
+  fresh shell/source-build.sh --file=$file
 done
 
 fresh-options --file=~/.bash_logout
