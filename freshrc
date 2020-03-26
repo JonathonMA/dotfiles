@@ -44,6 +44,7 @@ find $FRESH_LOCAL/xdg/share/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -
 fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.vim
 
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
+# "
   fresh nvim/leader.vim
   fresh nvim/plug_before.vim
   fresh nvim/plug.vim
@@ -85,14 +86,14 @@ fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Roman.otf
 fresh bltavares/dot-files ctags --file=~/.ctags
 
 # Gitignore
-fresh-options --file=~/.gitignore --marker=#
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore --marker=#
   fresh github/gitignore Global/Vim.gitignore
   fresh github/gitignore Global/macOS.gitignore
   fresh github/gitignore Global/Tags.gitignore
 fresh-options
 
 # Git aliases
-fresh-options --file=~/.gitconfig --marker=#
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/config --marker=#
   fresh git/alias_before.gitconfig
   fresh 'git/aliases/*'
   fresh 'git/config/*'
@@ -103,14 +104,20 @@ if [ ! -d ~/.local/share/dotfiles/private ]; then
   git clone ~/Dropbox/repos/dotfiles-private ~/.local/share/dotfiles/private
 fi
 
-if [ ! -e ~/.gitconfig.local ]; then
-    echo "Configuring local Git settings:"
-    read -p "    Enter Git Name: " username
-    git config -f ~/.gitconfig.local user.name "$username"
-    read -p "    Enter Git Email: " email
-    git config -f ~/.gitconfig.local user.email $email
-    echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
-fi
+config_git() {
+  local config_git_local=${XDG_CONFIG_HOME:-$HOME/.config}/git/local
+
+  if [ ! -e "$config_git_local" ]; then
+      echo "Configuring local Git settings:"
+      read -p "    Enter Git Name: " username
+      git config -f "$config_git_local" user.name "$username"
+      read -p "    Enter Git Email: " email
+      git config -f "$config_git_local" user.email $email
+      echo "Configured git settings in "$config_git_local". Not stored in local .dotfiles repo."
+  fi
+}
+
+config_git
 
 if [ ! -d ~/.local/share/asdf ]; then
   (
