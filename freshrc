@@ -122,6 +122,8 @@ fresh --file=~/.config/git/identity_ennova private/config/git/identity_ennova --
 config_git() {
   local config_git_local=${XDG_CONFIG_HOME:-$HOME/.config}/git/local
 
+  mkdir -p "$(dirname "$config_git_local")"
+
   if [ ! -e "$config_git_local" ]; then
       echo "Configuring local Git settings:"
       read -p "    Enter Git Name: " username
