@@ -52,6 +52,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
   fresh 'nvim/plugins/*.vim'
   fresh nvim/plug_after.vim
   fresh nvim/global.vim
+  fresh nvim/color.vim
   fresh 'nvim/config/*.vim'
   fresh nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
