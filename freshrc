@@ -28,7 +28,7 @@ fresh 'shell/preexec.sh'
 # Config
 fresh-options --file
   fresh 'config/*'
-  fresh 'private/config/*'
+  fresh 'private/config/*rc' --ignore-missing
   fresh jasoncodes/dotfiles config/inputrc
 fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
