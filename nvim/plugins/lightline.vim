@@ -1,5 +1,5 @@
 Plug 'itchyny/lightline.vim'
-Plug 'daviesjamie/vim-base16-lightline'
+Plug 'mike-hearn/base16-vim-lightline'
 
 let g:lightline = {
   \ 'component': {
@@ -13,7 +13,7 @@ let g:lightline = {
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }
 
-let g:lightline.colorscheme = 'base16'
+let g:lightline.colorscheme = 'base16_default_dark'
 
 let g:lightline.active = {
 \  'left': [
