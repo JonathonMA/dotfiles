@@ -36,7 +36,7 @@ fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh Kraust/base16-tmux base16.tmuxtheme --file=~/.tmux.conf
 
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
-find $FRESH_LOCAL/xdg/config/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.config/ \;
+cp -frsv "$FRESH_LOCAL"/xdg/config/* ~/.config/
 find $FRESH_LOCAL/xdg/share/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.local/share/ \;
 
 # NVim
