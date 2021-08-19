@@ -1,0 +1,1 @@
+text/html; elinks -no-connect -dump -dump-color-mode 0 -dump-charset UTF-8 -dump-width 80 -default-mime-type text/html %s; needsterminal; copiousoutput;

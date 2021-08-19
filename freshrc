@@ -89,6 +89,13 @@ fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Roman.otf
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
 
+# NeoMutt
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/neomutt/neomuttrc --marker=#
+  fresh neomutt/*
+  fresh josephholsten/base16-mutt base16.muttrc
+  fresh private/config/neomutt/accounts --ignore-missing
+fresh-options
+
 # Gitignore
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore --marker=#
   fresh github/gitignore Global/Vim.gitignore
