@@ -3,4 +3,5 @@
 [alias]
   rim = rebase -i --autosquash origin/master
   rid = rebase -i --autosquash origin/develop
+  rio = "!git rebase -i --autosquash origin/$(git rev-parse --abbrev-ref HEAD)"
   con = rebase --continue
