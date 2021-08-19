@@ -45,6 +45,7 @@ fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.v
 
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
 # "
+  fresh nvim/preamble.vim
   fresh nvim/leader.vim
   fresh nvim/plug_before.vim
   fresh nvim/plug.vim
