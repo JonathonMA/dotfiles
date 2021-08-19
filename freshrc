@@ -35,8 +35,10 @@ fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
-cp -frsv "$FRESH_LOCAL"/xdg/config/* ~/.config/
-find $FRESH_LOCAL/xdg/share/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.local/share/ \;
+(cd "$FRESH_LOCAL"/xdg/config && find . -type d -exec mkdir -p ~/.config/{} \;)
+(cd "$FRESH_LOCAL"/xdg/config && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/xdg/config/{} ~/.config/{} \;)
+(cd "$FRESH_LOCAL"/xdg/share && find . -type d -exec mkdir -p ~/.local/share/{} \;)
+(cd "$FRESH_LOCAL"/xdg/share && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/xdg/share/{} ~/.local/share/{} \;)
 
 # Tmux
 fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
