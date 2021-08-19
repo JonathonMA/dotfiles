@@ -9,9 +9,7 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_layout = {
-  \   'window': 'botright 10split enew',
-\ }
+let g:fzf_layout = { 'down': '40%' }
 
 command! -bang FzfModified
   \ call fzf#run(extend({
@@ -38,5 +36,3 @@ map <silent> <leader>t :FzfFiles<CR>
 map <silent> <leader>l :FzfBuffers<CR>
 map <silent> <leader>m :FzfModified<CR>
 map <silent> <leader>M :FzfBranchModified<CR>
-map <silent> <leader>d :exe 'FzfFiles ' . expand('%:p:h', 1)<CR>
-map <silent> <C-]> :FzfTagJump<CR>
