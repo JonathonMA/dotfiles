@@ -105,6 +105,8 @@ if [ ! -d ~/.local/share/dotfiles/private ]; then
   git clone ~/Dropbox/repos/dotfiles-private ~/.local/share/dotfiles/private
 fi
 
+fresh --file=~/.config/git/identity_ennova private/config/git/identity_ennova --ignore-missing
+
 config_git() {
   local config_git_local=${XDG_CONFIG_HOME:-$HOME/.config}/git/local
 
