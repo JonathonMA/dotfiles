@@ -113,7 +113,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/config --marker=#
 fresh-options
 
 # Private
-if [ ! -d ~/.local/share/dotfiles/private ]; then
+if [ ! -d ~/.local/share/dotfiles/private -a -d ~/Dropbox/repos/ ]; then
   git clone ~/Dropbox/repos/dotfiles-private ~/.local/share/dotfiles/private
 fi
 
