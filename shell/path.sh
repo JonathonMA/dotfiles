@@ -19,8 +19,11 @@ append_path '/opt/X11/bin'
 append_path '/usr/games'
 append_path "$HOME/.local/bin"
 
-prepend_path '/usr/local/opt/coreutils/libexec/gnubin'
-# MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+if command -v brew >/dev/null; then
+  prepend_path "$(brew --prefix)/opt/coreutils/libexec/gnubin"
+  prepend_path "$(brew --prefix)/opt/findutils/libexec/gnubin"
+  prepend_path "$(brew --prefix)/opt/gnu-sed/libexec/gnubin"
+fi
 
 if [ -f "$HOME/.bashrc.local.path" ]; then
   source "$HOME/.bashrc.local.path"
