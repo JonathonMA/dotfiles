@@ -20,3 +20,7 @@ fi
 if [ -f "$HOME/.bashrc.local.path" ]; then
   source "$HOME/.bashrc.local.path"
 fi
+
+for dir in ~/src/*.com; do
+  path_append CDPATH "$dir"
+done
