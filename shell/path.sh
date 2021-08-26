@@ -1,33 +1,22 @@
-function prepend_path() {
-  if [ -d "$1" ]; then
-    PATH="$1:$PATH"
-  fi
-}
-function append_path() {
-  if [ -d "$1" ]; then
-    PATH="$PATH:$1"
-  fi
-}
+# EXAMPLE: path_prepend PATH /usr/local/bin
+# EXAMPLE: path_append PATH /usr/games
 
 PATH=$(getconf PATH)
 
-prepend_path '/usr/sbin'
-prepend_path '/sbin'
-prepend_path '/usr/local/bin'
-prepend_path '/usr/local/sbin'
-append_path '/opt/X11/bin'
-append_path '/usr/games'
-append_path "$HOME/.local/bin"
+path_prepend PATH '/usr/sbin'
+path_prepend PATH '/sbin'
+path_prepend PATH '/usr/local/bin'
+path_prepend PATH '/usr/local/sbin'
+path_append PATH '/opt/X11/bin'
+path_append PATH '/usr/games'
+path_append PATH "$HOME/.local/bin"
 
 if command -v brew >/dev/null; then
-  prepend_path "$(brew --prefix)/opt/coreutils/libexec/gnubin"
-  prepend_path "$(brew --prefix)/opt/findutils/libexec/gnubin"
-  prepend_path "$(brew --prefix)/opt/gnu-sed/libexec/gnubin"
+  path_prepend PATH "$(brew --prefix)/opt/coreutils/libexec/gnubin"
+  path_prepend PATH "$(brew --prefix)/opt/findutils/libexec/gnubin"
+  path_prepend PATH "$(brew --prefix)/opt/gnu-sed/libexec/gnubin"
 fi
 
 if [ -f "$HOME/.bashrc.local.path" ]; then
   source "$HOME/.bashrc.local.path"
 fi
-
-unset prepend_path
-unset append_path

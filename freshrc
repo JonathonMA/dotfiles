@@ -3,7 +3,9 @@
 fresh freshshell/fresh bin/fresh --bin
 for file in ~/.bash_profile ~/.bashrc; do
   fresh shell/noninteractive.sh --file=$file
+  fresh shell/path_pre.sh --file=$file
   fresh shell/path.sh --file=$file
+  fresh shell/path_post.sh --file=$file
   fresh shell/source-build.sh --file=$file
 done
 
