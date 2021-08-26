@@ -10,8 +10,10 @@
 # EXAMPLE: path_prepend PATH /usr/local/bin
 path_prepend() {
   local aux=":${!1}:"
-  aux=${aux//:$2:/:}; aux=${aux#:}; aux=${aux%:}
-  printf -v "$1" '%s' "${2}${aux:+:}${aux}"
+  if [ -d "$2" ]; then
+    aux=${aux//:$2:/:}; aux=${aux#:}; aux=${aux%:}
+    printf -v "$1" '%s' "${2}${aux:+:}${aux}"
+  fi
 }
 
 # SYNOPSIS: path_append varName path
@@ -20,8 +22,10 @@ path_prepend() {
 # EXAMPLE: path_append PATH /usr/local/bin
 path_append() {
   local aux=":${!1}:"
-  aux=${aux//:$2:/:}; aux=${aux#:}; aux=${aux%:}
-  printf -v "$1" '%s' "${aux}${aux:+:}${2}"
+  if [ -d "$2" ]; then
+    aux=${aux//:$2:/:}; aux=${aux#:}; aux=${aux%:}
+    printf -v "$1" '%s' "${aux}${aux:+:}${2}"
+  fi
 }
 
 # SYNOPSIS: path_remove varName path
