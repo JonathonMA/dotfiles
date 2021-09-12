@@ -49,6 +49,10 @@ fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
 
 fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.vim
 
+[ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ] ||
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
 # "
   fresh nvim/preamble.vim
@@ -63,6 +67,12 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
   fresh nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh nvim/exrc.vim
+  fresh nvim/lua.vim
+fresh-options
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
+  fresh nvim/packer_before.lua
+  fresh 'nvim/packer/*.lua'
+  fresh nvim/packer_after.lua
 fresh-options
 
 # More XCompose sequences
