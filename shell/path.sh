@@ -9,7 +9,14 @@ path_prepend PATH '/usr/local/bin'
 path_prepend PATH '/usr/local/sbin'
 path_append PATH '/opt/X11/bin'
 path_append PATH '/usr/games'
+
+if [ -d /snap/bin ]; then
+  path_append PATH "/snap/bin"
+fi
+
 path_append PATH "$HOME/.local/bin"
+path_append PATH "$HOME/.cargo/bin"
+path_append PATH "$HOME/.local/share/fzf/bin"
 
 if command -v brew >/dev/null; then
   path_prepend PATH "$(brew --prefix)/opt/coreutils/libexec/gnubin"
