@@ -1,15 +1,4 @@
 lua << LUA
-require('telescope').setup({
-  defaults = {
-    layout_strategy = "bottom_pane",
-    layout_config = {
-      bottom_pane = {
-        height = 18,
-      },
-    },
-  },
-})
-
 -- https://github.com/nvim-telescope/telescope.nvim/issues/555#issuecomment-785919858
 local MakeCommandPicker = function(prompt_title, command)
   local make_entry = require "telescope.make_entry"
