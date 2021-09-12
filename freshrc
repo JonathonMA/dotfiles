@@ -65,6 +65,9 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
   fresh nvim/exrc.vim
 fresh-options
 
+# More XCompose sequences
+fresh kragen/xcompose dotXCompose --file=~/.XCompose
+
 # Fonts
 fresh powerline/powerline font/PowerlineSymbols.otf --file=~/.local/share/fonts/PowerlineSymbols.otf
 fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
