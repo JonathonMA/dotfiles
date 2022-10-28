@@ -27,9 +27,11 @@ end
 local builtin = require "telescope.builtin"
 builtin.git_modified = MakeCommandPicker('Git Modified Files', 'modified.sh')
 builtin.git_branch_modified = MakeCommandPicker('Git Branch Modified Files', 'branch_modified.sh')
+builtin.myorg = MakeCommandPicker('Org', 'myorg.sh')
 LUA
 
 nnoremap <leader>t <cmd>Telescope find_files<cr>
 nnoremap <leader>l <cmd>Telescope buffers<cr>
 nnoremap <leader>m <cmd>Telescope git_modified<cr>
 nnoremap <leader>M <cmd>Telescope git_branch_modified<cr>
+nnoremap <leader>; <cmd>Telescope myorg<cr>
