@@ -1,1 +1,1 @@
-eval "`~/.local/share/fresh/source/chriskempson/base16-shell/profile_helper.sh`"
+source "$HOME/.local/share/fresh/source/tinted-theming/base16-shell/base16-shell.plugin.bash"
