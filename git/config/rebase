@@ -5,3 +5,5 @@
   rid = rebase -i --autosquash origin/develop
   rio = "!git rebase -i --autosquash origin/$(git rev-parse --abbrev-ref HEAD)"
   con = rebase --continue
+  branch-point = "!git config --local branch.$(git current-branch).branchpoint"
+  rib = "!git rebase -i --autosquash $(git branch-point || echo origin/develop)"
