@@ -1,0 +1,1 @@
+use 'tpope/vim-rails'
