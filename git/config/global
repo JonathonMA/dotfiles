@@ -12,3 +12,5 @@
   autosquash = true
 [gc]
   auto = 0
+[init]
+  defaultBranch = main
