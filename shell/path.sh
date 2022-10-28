@@ -14,7 +14,7 @@ if [ -d /snap/bin ]; then
   path_append PATH "/snap/bin"
 fi
 
-path_append PATH "$HOME/.local/bin"
+path_prepend PATH "$HOME/.local/bin"
 path_append PATH "$HOME/.cargo/bin"
 path_append PATH "$HOME/.local/share/fzf/bin"
 
