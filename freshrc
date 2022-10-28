@@ -27,6 +27,7 @@ fresh chriskempson/base16-shell scripts/base16-solarized-dark.sh
 fresh rcaloras/bash-preexec bash-preexec.sh
 fresh 'shell/preexec.sh'
 fresh 'shell/local.sh'
+fresh JonathonMA/mlocate-encrypted-home locate-home.sh
 
 # Config
 fresh-options --file
