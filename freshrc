@@ -58,8 +58,6 @@ fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
 
 # NVim
 
-fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.vim
-
 [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ] ||
   git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -68,9 +66,6 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
 # "
   fresh nvim/preamble.vim
   fresh nvim/leader.vim
-  fresh nvim/plug_before.vim
-  fresh 'nvim/plugins/*.vim'
-  fresh nvim/plug_after.vim
   fresh nvim/global.vim
   fresh nvim/color.vim
   fresh 'nvim/config/*.vim'
