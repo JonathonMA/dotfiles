@@ -1,0 +1,1 @@
+use 'niklasl/vim-rdf'

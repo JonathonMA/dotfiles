@@ -1,1 +1,0 @@
-Plug 'niklasl/vim-rdf'
