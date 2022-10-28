@@ -1,1 +1,0 @@
-Plug 'jlanzarotta/bufexplorer'
