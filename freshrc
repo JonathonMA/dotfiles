@@ -26,6 +26,7 @@ fresh 'shell/config/*'
 fresh chriskempson/base16-shell scripts/base16-solarized-dark.sh
 fresh rcaloras/bash-preexec bash-preexec.sh
 fresh 'shell/preexec.sh'
+fresh 'shell/local.sh'
 
 # Config
 fresh-options --file
