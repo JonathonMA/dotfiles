@@ -31,8 +31,10 @@ ensure_checkout tinted-theming/base16-shell profile_helper.sh
 
 # Shell
 fresh shell/noninteractive.sh
+fresh shell/has_command_pre.sh
 fresh 'shell/aliases/*'
 fresh 'shell/config/*'
+fresh shell/has_command_post.sh
 fresh rcaloras/bash-preexec bash-preexec.sh
 fresh 'shell/preexec.sh'
 fresh 'shell/local.sh'

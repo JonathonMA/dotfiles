@@ -1,6 +1,7 @@
-alias_if_missing() {
-  command -v "$1" >/dev/null || alias "$1"="$2"
-}
+if ! has_command pbcopy; then
+  alias pbcopy='xsel --clipboard --input'
+fi
 
-alias_if_missing pbcopy 'xsel --clipboard --input'
-alias_if_missing pbpaste 'xsel --clipboard --output'
+if ! has_command pbpaste; then
+  alias pbpaste='xsel --clipboard --output'
+fi

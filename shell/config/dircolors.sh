@@ -1,3 +1,3 @@
-if command -v dircolors > /dev/null; then
+if has_command dircolors; then
   eval "$(dircolors -b ~/.dircolors)"
 fi

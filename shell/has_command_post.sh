@@ -1,0 +1,2 @@
+unset has_command
+
