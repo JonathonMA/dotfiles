@@ -64,8 +64,8 @@ fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
   git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
-# "
+fresh nvim/vimscript_before.lua --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --marker='"'
   fresh nvim/preamble.vim
   fresh nvim/leader.vim
   fresh nvim/global.vim
@@ -74,8 +74,13 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
   fresh nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh nvim/exrc.vim
-  fresh nvim/lua.vim
+  fresh nvim/vimscript_after.lua
 fresh-options
+
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.lua --marker='--'
+  fresh nvim/init.lua
+fresh-options
+
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
   fresh nvim/packer_before.lua
   fresh nvim/packer.lua
