@@ -1,6 +1,6 @@
 
 use {
-  'w0rp/ale',
+  'dense-analysis/ale',
   config = function()
     vim.cmd [[
       nmap <silent> <C-k> <Plug>(ale_previous_wrap)
