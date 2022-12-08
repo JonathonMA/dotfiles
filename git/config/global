@@ -6,8 +6,6 @@
   ui = auto
 [push]
   default = simple
-[core]
-  excludesfile = ~/.gitignore
 [rebase]
   autosquash = true
 [gc]
