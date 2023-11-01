@@ -1,2 +1,4 @@
 [includeIf "gitdir:~/src/ennova.com/"]
   path = ~/.config/git/identity_ennova
+[includeIf "gitdir:~/src/bentley.com/"]
+  path = ~/.config/git/identity_bentley
