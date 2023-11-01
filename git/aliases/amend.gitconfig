@@ -1,1 +1,2 @@
   amend = commit --amend
+  reword = "!f() { git commit --fixup=reword:"$1"; }; f"
