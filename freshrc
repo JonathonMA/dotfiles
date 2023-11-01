@@ -141,11 +141,13 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/config --marker=#
 fresh-options
 
 # Private
-if [ ! -d ~/.local/share/dotfiles/private -a -d ~/Dropbox/repos/ ]; then
-  git clone ~/Dropbox/repos/dotfiles-private ~/.local/share/dotfiles/private
+if [ ! -d ~/.local/share/dotfiles/private ]; then
+  git clone git@github.com:JonathonMA/jma-dotfiles-private.git ~/.local/share/dotfiles/private
 fi
 
-fresh --file=~/.config/git/identity_ennova private/config/git/identity_ennova --ignore-missing
+for id_file in private/config/git/identity_*; do
+  fresh --file=~/.config/git/"$(basename "$id_file")" "$id_file"
+done
 
 config_git() {
   local config_git_local=${XDG_CONFIG_HOME:-$HOME/.config}/git/local
