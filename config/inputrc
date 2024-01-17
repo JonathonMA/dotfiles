@@ -1,0 +1,12 @@
+# UTF-8 support
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
+
+set show-all-if-ambiguous on
+set mark-symlinked-directories on
+
+# Include system wide settings which are ignored
+# by default if one has their own .inputrc
+$include /etc/inputrc
