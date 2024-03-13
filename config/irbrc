@@ -1,6 +1,4 @@
 require 'irb/completion'
-require 'irb/ext/history'
-require 'irb/ext/save-history'
 require 'pp'
 
 IRB.conf[:AUTO_INDENT] = true
