@@ -1,5 +1,4 @@
 require('init_vim')
-require('plugins')
 
 -- :help sd
 vim.opt.shada = {
