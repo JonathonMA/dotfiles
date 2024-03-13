@@ -48,11 +48,17 @@ fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 
+xdg_populate() {
+  if [ -d "$FRESH_LOCAL"/"$1" ]; then
+    (cd "$FRESH_LOCAL"/"$1" && find . -type d -exec mkdir -p "$2"/{} \;)
+    (cd "$FRESH_LOCAL"/"$1" && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/"$1"/{} "$2"/{} \;)
+  fi
+}
+
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
-(cd "$FRESH_LOCAL"/xdg/config && find . -type d -exec mkdir -p ~/.config/{} \;)
-(cd "$FRESH_LOCAL"/xdg/config && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/xdg/config/{} ~/.config/{} \;)
-(cd "$FRESH_LOCAL"/xdg/share && find . -type d -exec mkdir -p ~/.local/share/{} \;)
-(cd "$FRESH_LOCAL"/xdg/share && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/xdg/share/{} ~/.local/share/{} \;)
+xdg_populate xdg/config ~/.config
+xdg_populate xdg/share ~/.local/share
+xdg_populate private/xdg/share ~/.local/share
 
 # Tmux
 fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
