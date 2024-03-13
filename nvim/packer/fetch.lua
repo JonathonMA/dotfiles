@@ -1,1 +1,0 @@
-use 'wsdjeg/vim-fetch'

@@ -55,42 +55,54 @@ xdg_populate() {
   fi
 }
 
+xdg_populate_dir() {
+  target="${FRESH_LOCAL}/$1"
+  if [ -d "$2" -a ! -L "$2" ]; then
+    echo "$2: exists as dir"
+    exit 1
+  elif [ -L "$2" ]; then
+    if [ "$(readlink "$2")" != "$target" ]; then
+      echo "$2: exists and is a bad link"
+    else
+      :
+    fi
+  else
+    mkdir -p "$(dirname "$2")"
+    ln -s "$target" "$2"
+  fi
+}
+
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
 xdg_populate xdg/config ~/.config
 xdg_populate xdg/share ~/.local/share
 xdg_populate private/xdg/share ~/.local/share
+xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
 
 # Tmux
 fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
 
 # NVim
+nvim_path="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 
-[ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ] ||
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fresh-options --file="${nvim_path}/init.lua" --marker='--'
+  fresh 'nvim/init/*.lua'
+fresh-options
 
-fresh nvim/vimscript_before.lua --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua
-fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --marker='"'
-  fresh nvim/preamble.vim
-  fresh nvim/leader.vim
-  fresh nvim/global.vim
-  fresh nvim/color.vim
+fresh-options --file="${nvim_path}/preinit.vim" --marker='"'
+  fresh 'nvim/preinit/*.vim'
+fresh-options
+
+fresh-options --file="${nvim_path}/lua/vim/preinit.lua" --marker='--'
+  fresh 'nvim/preinit/*.lua'
+fresh-options
+
+fresh-options --file="${nvim_path}/config.vim" --marker='"'
   fresh 'nvim/config/*.vim'
-  fresh nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
-  fresh nvim/exrc.vim
-  fresh nvim/vimscript_after.lua
 fresh-options
 
-fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.lua --marker='--'
-  fresh nvim/init.lua
-fresh-options
-
-fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
-  fresh nvim/packer_before.lua
-  fresh nvim/packer.lua
-  fresh 'nvim/packer/*.lua'
-  fresh nvim/packer_after.lua
+fresh-options --file="${nvim_path}/lua/vim/config.lua" --marker='--'
+  fresh 'nvim/config/*.lua'
 fresh-options
 
 # More XCompose sequences
