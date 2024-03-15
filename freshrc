@@ -122,7 +122,6 @@ fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Italic.ot
 fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Roman.otf --file=~/.local/share/fonts/SourceCodeVariable-Roman.otf
 
 # Other config
-fresh bltavares/dot-files ctags --file=~/.ctags
 
 # NeoMutt
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/neomutt/neomuttrc --marker=#
