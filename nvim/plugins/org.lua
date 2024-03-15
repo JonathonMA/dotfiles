@@ -7,6 +7,9 @@ return {
   {'chrisbra/NrrwRgn'},
   {
     'nvim-orgmode/orgmode.nvim',
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    },
     config = function()
       require('orgmode').setup_ts_grammar()
       require('orgmode').setup({
@@ -17,13 +20,14 @@ return {
     end,
   },
   {
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup {
-        symbols = {
-          headlines = { "◉", "○", "●", "◈", "◇", "◆", "▣", "□", "■", },
-        },
-      }
-    end,
+    "lukas-reineke/headlines.nvim",
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    },
+    opts = {
+      org = {
+        bullets = { "◉", "○", "●", "◈", "◇", "◆", "▣", "□", "■", },
+      },
+    },
   },
 }
