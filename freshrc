@@ -125,8 +125,8 @@ fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Medium.otf --f
 fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Regular.otf --file=~/.local/share/fonts/SourceCodePro-Regular.otf
 fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-SemiboldIt.otf --file=~/.local/share/fonts/SourceCodePro-SemiboldIt.otf
 fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Semibold.otf --file=~/.local/share/fonts/SourceCodePro-Semibold.otf
-fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Italic.otf --file=~/.local/share/fonts/SourceCodeVariable-Italic.otf
-fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Roman.otf --file=~/.local/share/fonts/SourceCodeVariable-Roman.otf
+fresh adobe-fonts/source-code-pro --ref=release VF/SourceCodeVF-Italic.otf --file=~/.local/share/fonts/SourceCodeVF-Italic.otf
+fresh adobe-fonts/source-code-pro --ref=release VF/SourceCodeVF-Upright.otf --file=~/.local/share/fonts/SourceCodeVF-Upright.otf
 
 # Other config
 fresh bltavares/dot-files ctags --file=~/.ctags
