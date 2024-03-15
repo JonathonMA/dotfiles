@@ -129,7 +129,6 @@ fresh adobe-fonts/source-code-pro --ref=release VF/SourceCodeVF-Italic.otf --fil
 fresh adobe-fonts/source-code-pro --ref=release VF/SourceCodeVF-Upright.otf --file=~/.local/share/fonts/SourceCodeVF-Upright.otf
 
 # Other config
-fresh bltavares/dot-files ctags --file=~/.ctags
 
 # NeoMutt
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/neomutt/neomuttrc --marker=#
