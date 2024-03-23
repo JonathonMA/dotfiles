@@ -1,0 +1,30 @@
+#!/usr/bin/env -S bash -c 'set +x; source "$(dirname "$0")"/fontlib.sh; source "$0"; do_deploy'
+
+deploy_font adobe-fonts/source-code-pro 4bbbf01dcf69752d527dbad061e2977b30d0bee2 \
+  /OTF/SourceCodePro-Black.otf \
+  /OTF/SourceCodePro-BlackIt.otf \
+  /OTF/SourceCodePro-Bold.otf \
+  /OTF/SourceCodePro-BoldIt.otf \
+  /OTF/SourceCodePro-ExtraLight.otf \
+  /OTF/SourceCodePro-ExtraLightIt.otf \
+  /OTF/SourceCodePro-It.otf \
+  /OTF/SourceCodePro-Light.otf \
+  /OTF/SourceCodePro-LightIt.otf \
+  /OTF/SourceCodePro-Medium.otf \
+  /OTF/SourceCodePro-MediumIt.otf \
+  /OTF/SourceCodePro-Regular.otf \
+  /OTF/SourceCodePro-Semibold.otf \
+  /OTF/SourceCodePro-SemiboldIt.otf \
+  /VF/SourceCodeVF-Italic.otf \
+  /VF/SourceCodeVF-Upright.otf
+
+deploy_font edwardtufte/et-book 65f78029d378dea4a864a395933988b49adf0be2 \
+  /et-book-ligatures-enabled/et-book-display-italic-old-style-figures/ETBookOT-Italic.otf \
+  /et-book-ligatures-enabled/et-book-bold-line-figures/ETBookOT-Bold.otf \
+  /et-book-ligatures-enabled/et-book-roman-old-style-figures/ETBookOT-Roman.otf
+
+deploy_font ryanoasis/nerd-fonts 91d8a283d316fa38e440f24520ad6e5f93534a0c \
+  /patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf
+
+deploy_fontconfig ryanoasis/nerd-fonts 91d8a283d316fa38e440f24520ad6e5f93534a0c \
+  /10-nerd-font-symbols.conf
