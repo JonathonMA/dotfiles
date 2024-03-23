@@ -108,31 +108,6 @@ fresh-options
 # More XCompose sequences
 fresh kragen/xcompose dotXCompose --file=~/.XCompose
 
-# Fonts
-fresh powerline/powerline font/PowerlineSymbols.otf --file=~/.local/share/fonts/PowerlineSymbols.otf
-fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
-
-fresh edwardtufte/et-book et-book-ligatures-enabled/et-book-display-italic-old-style-figures/ETBookOT-Italic.otf --file=~/.local/share/fonts/ETBookOT-Italic.otf
-fresh edwardtufte/et-book et-book-ligatures-enabled/et-book-bold-line-figures/ETBookOT-Bold.otf --file=~/.local/share/fonts/ETBookOT-Bold.otf
-fresh edwardtufte/et-book et-book-ligatures-enabled/et-book-roman-old-style-figures/ETBookOT-Roman.otf --file=~/.local/share/fonts/ETBookOT-Roman.otf
-
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-BlackIt.otf --file=~/.local/share/fonts/SourceCodePro-BlackIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Black.otf --file=~/.local/share/fonts/SourceCodePro-Black.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-BoldIt.otf --file=~/.local/share/fonts/SourceCodePro-BoldIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Bold.otf --file=~/.local/share/fonts/SourceCodePro-Bold.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-ExtraLightIt.otf --file=~/.local/share/fonts/SourceCodePro-ExtraLightIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-ExtraLight.otf --file=~/.local/share/fonts/SourceCodePro-ExtraLight.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-It.otf --file=~/.local/share/fonts/SourceCodePro-It.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-LightIt.otf --file=~/.local/share/fonts/SourceCodePro-LightIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Light.otf --file=~/.local/share/fonts/SourceCodePro-Light.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-MediumIt.otf --file=~/.local/share/fonts/SourceCodePro-MediumIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Medium.otf --file=~/.local/share/fonts/SourceCodePro-Medium.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Regular.otf --file=~/.local/share/fonts/SourceCodePro-Regular.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-SemiboldIt.otf --file=~/.local/share/fonts/SourceCodePro-SemiboldIt.otf
-fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Semibold.otf --file=~/.local/share/fonts/SourceCodePro-Semibold.otf
-fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Italic.otf --file=~/.local/share/fonts/SourceCodeVariable-Italic.otf
-fresh adobe-fonts/source-code-pro --ref=release VAR/SourceCodeVariable-Roman.otf --file=~/.local/share/fonts/SourceCodeVariable-Roman.otf
-
 # Other config
 
 # NeoMutt
@@ -155,6 +130,9 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/config --marker=#
   fresh 'git/aliases/*'
   fresh 'git/config/*'
 fresh-options
+
+# Manage fonts
+"$FRESH_LOCAL/fonts"
 
 # Private
 if [ ! -d ~/.local/share/dotfiles/private ]; then
