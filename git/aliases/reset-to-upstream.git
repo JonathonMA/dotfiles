@@ -1,0 +1,2 @@
+  reset-to-upstream = "!f() { git fetch && git reset --hard @{u}; }; f"
+  rtu = reset-to-upstream
