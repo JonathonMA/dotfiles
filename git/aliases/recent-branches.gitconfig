@@ -1,0 +1,3 @@
+  # https://ses4j.github.io/2020/04/01/git-alias-recent-branches/
+  recent-branches = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 20 | awk -F' ~ HEAD@{' '{printf(\"\\033[32m(%s){\\033[31m%s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}' | sed -e 's/ ago)/)/g' | column -t -s'{'
+  rb = recent-branches
