@@ -18,15 +18,15 @@ return {
       })
     end,
   },
-  {
-    "lukas-reineke/headlines.nvim",
-    dependencies = {
-      { 'nvim-treesitter/nvim-treesitter', lazy = true },
-    },
-    opts = {
-      org = {
-        bullets = { "◉", "○", "●", "◈", "◇", "◆", "▣", "□", "■", },
-      },
-    },
-  },
+  -- {
+  --   "lukas-reineke/headlines.nvim",
+  --   dependencies = {
+  --     { 'nvim-treesitter/nvim-treesitter', lazy = true },
+  --   },
+  --   opts = {
+  --     org = {
+  --       bullets = { "◉", "○", "●", "◈", "◇", "◆", "▣", "□", "■", },
+  --     },
+  --   },
+  -- },
 }
