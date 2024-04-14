@@ -1,5 +1,10 @@
 #!/usr/bin/env -S bash -c 'set +x; source "$(dirname "$0")"/fontlib.sh; source "$0"; do_deploy'
 
+# Mono Fonts
 deploy_font_glob adobe-fonts/source-code-pro 4bbbf01dcf69752d527dbad061e2977b30d0bee2 "OTF/*.otf" "VF/*.otf"
-deploy_font_glob edwardtufte/et-book 65f78029d378dea4a864a395933988b49adf0be2 "et-book-ligatures-enabled/**/*.otf"
 deploy_font ryanoasis/nerd-fonts 91d8a283d316fa38e440f24520ad6e5f93534a0c patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf
+
+# Regular Fonts
+deploy_font_glob edwardtufte/et-book 65f78029d378dea4a864a395933988b49adf0be2 "et-book-ligatures-enabled/**/*.otf"
+deploy_font_glob DavidBarts/ET_Bembo master "ETBembo-*.otf"
+deploy_font_glob_release "georgd/EB-Garamond" "EBGaramond.zip" "EB-Garamond" "EBGaramond*.otf"
