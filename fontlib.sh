@@ -7,8 +7,9 @@ if ! command -v aria2c >/dev/null; then
   exit 0
 fi
 
-ARIAFILE="$(mktemp)"
-trap 'rm -rf -- "$ARIAFILE"' EXIT
+tmpdir="$(mktemp -d)"
+trap '{ rm -rf "${tmpdir?}"; }' EXIT
+ARIAFILE="$(mktemp -p "$tmpdir")"
 
 github_glob() {
   shopt -s globstar
@@ -17,6 +18,17 @@ github_glob() {
 
   url="$(printf "https://api.github.com/repos/%s/git/trees/%s?recursive=1" "$github" "$ref")"
   curl -s "$url" | jq -r '.tree | map(.path)[]' | while read i; do
+    for glob in "$@"; do
+      [[ $i == @($glob) ]] && echo "$i" && break || true
+    done
+  done
+}
+
+zip_glob() {
+  shopt -s globstar
+  zipfile="$1" && shift
+
+  unzip -Z1 "$zipfile" | while read i; do
     for glob in "$@"; do
       [[ $i == @($glob) ]] && echo "$i" && break || true
     done
@@ -62,6 +74,39 @@ deploy_font_glob() {
     github_glob "$github" "$ref" "$@" | while read filename; do
       deploy "$github" "$ref" "$target" "$filename"
     done
+  fi
+}
+
+deploy_font_glob_release() {
+  github="$1" && shift
+  name="$1" && shift
+  target_name="$1" && shift
+
+  target="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/${target_name}"
+
+  if [[ "${FORCE_UPDATE:-0}" != "1" && -d "$target" ]]; then
+    :
+  else
+    url="$(printf "https://api.github.com/repos/%s/releases?page=1&per_page=1" "$github")"
+    download_url="$(
+      curl \
+        -s "$url" \
+        -H "Accept: application/vnd.github+json" \
+        -H "X-GitHub-Api-Version: 2022-11-28" |\
+        jq --arg name "$name" -r 'first | .assets | map(select(.name == $name)) | first | .browser_download_url'
+    )"
+
+    tmp_zipfile="$(mktemp -p "$tmpdir")"
+    wget -q --show-progress "$download_url" -O "$tmp_zipfile"
+    mkdir -p "$target"
+    zip_glob "$tmp_zipfile" "$@" | while read file; do
+      filename="$(basename "$file")"
+      if [ -f "$target/$filename" ]; then
+        :
+      else
+        echo "$file"
+      fi
+    done | xargs -d '\n' unzip -j -d "$target" "$tmp_zipfile"
   fi
 }
 
