@@ -11,6 +11,23 @@ tmpdir="$(mktemp -d)"
 trap '{ rm -rf "${tmpdir?}"; }' EXIT
 ARIAFILE="$(mktemp -p "$tmpdir")"
 
+font_path() {
+  local font_dir="$1" && shift
+
+  case "$OSTYPE" in
+    darwin*)
+      echo "$HOME/Library/Fonts/${font_dir}"
+      ;;
+    linux-gnu*)
+      echo "${XDG_DATA_HOME:-$HOME/.local/share}/fonts/${font_dir}"
+      ;;
+    *)
+      echo "Unknown OS: ${OSTYPE}"
+      exit 1
+      ;;
+  esac
+}
+
 glob2re() {
   for glob in "$@"; do
     echo "$glob"
@@ -52,21 +69,21 @@ deploy() {
 }
 
 deploy_font() {
+  base="$1" && shift
   github="$1" && shift
   ref="$1" && shift
 
-  base="$(basename "$github")"
-  target="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/${base}"
+  target="$(font_path "$base")"
 
   deploy "$github" "$ref" "$target" "$@"
 }
 
 deploy_font_glob() {
+  base="$1" && shift
   github="$1" && shift
   ref="$1" && shift
 
-  base="$(basename "$github")"
-  target="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/${base}"
+  target="$(font_path "$base")"
 
   # Skip if directory exists to save network requests
   if [[ "${FORCE_UPDATE:-0}" != "1" && -d "$target" ]]; then
@@ -79,11 +96,11 @@ deploy_font_glob() {
 }
 
 deploy_font_glob_release() {
+  base="$1" && shift
   github="$1" && shift
   name="$1" && shift
-  target_name="$1" && shift
 
-  target="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/${target_name}"
+  target="$(font_path "$base")"
 
   if [[ "${FORCE_UPDATE:-0}" != "1" && -d "$target" ]]; then
     :
