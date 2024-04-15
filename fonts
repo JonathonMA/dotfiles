@@ -1,4 +1,5 @@
-#!/usr/bin/env -S bash -c 'set +x; source "$(dirname "$0")"/fontlib.sh; source "$0"; do_deploy'
+#!/usr/bin/env bash
+source "$(dirname "$0")"/fontlib.sh
 
 # Mono Fonts
 deploy_font_glob adobe-fonts/source-code-pro 4bbbf01dcf69752d527dbad061e2977b30d0bee2 "OTF/*.otf" "VF/*.otf"
@@ -10,3 +11,5 @@ deploy_font_glob_release "microsoft/cascadia-code" "CascadiaCode-2111.01.zip" "c
 deploy_font_glob edwardtufte/et-book 65f78029d378dea4a864a395933988b49adf0be2 "et-book-ligatures-enabled/**/*.otf"
 deploy_font_glob DavidBarts/ET_Bembo master "ETBembo-*.otf"
 deploy_font_glob_release "georgd/EB-Garamond" "EBGaramond.zip" "EB-Garamond" "EBGaramond*.otf"
+
+do_deploy
