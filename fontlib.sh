@@ -11,28 +11,29 @@ tmpdir="$(mktemp -d)"
 trap '{ rm -rf "${tmpdir?}"; }' EXIT
 ARIAFILE="$(mktemp -p "$tmpdir")"
 
+glob2re() {
+  for glob in "$@"; do
+    echo "$glob"
+  done | sed \
+    -e 's,\*\*,DOUBLESTAR,g' \
+    -e 's,\*,SINGLESTAR,g' \
+    -e 's,SINGLESTAR,[^/]*,g' \
+    -e 's,DOUBLESTAR,.*,g' \
+    -e 's,^,^,' -e 's,$,$,'
+}
+
 github_glob() {
-  shopt -s globstar
   github="$1" && shift
   ref="$1" && shift
 
   url="$(printf "https://api.github.com/repos/%s/git/trees/%s?recursive=1" "$github" "$ref")"
-  curl -s "$url" | jq -r '.tree | map(.path)[]' | while read i; do
-    for glob in "$@"; do
-      [[ $i == @($glob) ]] && echo "$i" && break || true
-    done
-  done
+  curl -s "$url" | jq -r '.tree | map(.path)[]' | grep -f <(glob2re "$@")
 }
 
 zip_glob() {
-  shopt -s globstar
   zipfile="$1" && shift
 
-  unzip -Z1 "$zipfile" | while read i; do
-    for glob in "$@"; do
-      [[ $i == @($glob) ]] && echo "$i" && break || true
-    done
-  done
+  unzip -Z1 "$zipfile" | grep -f <(glob2re "$@")
 }
 
 deploy() {
