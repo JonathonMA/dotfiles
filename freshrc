@@ -133,6 +133,7 @@ fresh-options
 
 # Manage fonts
 "$FRESH_LOCAL/fonts"
+[ -x "$FRESH_LOCAL/private/fonts" ] && "$FRESH_LOCAL/private/fonts"
 
 # Private
 if [ ! -d ~/.local/share/dotfiles/private ]; then
