@@ -3,10 +3,11 @@ if ls --color -d . >/dev/null 2>&1; then
   alias ls='ls --color=auto'
 fi
 
-if has_command exa; then
-  alias ll='exa -alF'
-  alias la='exa -a'
-  alias l='exa --icons -GF'
+if has_command eza; then
+  alias ll='eza -alF'
+  alias la='eza -a'
+  alias l='eza --icons -GF'
+  alias exa=eza
 else
   alias ll='ls -alF'
   alias la='ls -A'
