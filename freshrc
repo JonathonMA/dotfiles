@@ -45,7 +45,7 @@ fresh-options --file
   fresh 'config/*'
 fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
-fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
+fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.config/dircolors
 
 xdg_populate() {
   if [ -d "$FRESH_LOCAL"/"$1" ]; then

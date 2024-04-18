@@ -1,3 +1,3 @@
 if has_command dircolors; then
-  eval "$(dircolors -b ~/.dircolors)"
+  eval "$(dircolors -b ~/.config/dircolors)"
 fi
