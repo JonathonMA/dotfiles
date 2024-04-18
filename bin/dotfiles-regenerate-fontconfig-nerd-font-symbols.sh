@@ -32,4 +32,4 @@ exec jq \
   --slurpfile fonts <(fonts | jq -R) \
   --from-file <(jq_script) |\
   yq -o=xml > "$tmpfile"
-  mv -v "$tmpfile" "${FRESH_LOCAL}/config/fontconfig/conf.d/10-nerd-font-symbols.conf"
+  mv "$tmpfile" "${XDG_CONFIG_HOME:-$HOME/.config}/fontconfig/conf.d/10-nerd-font-symbols.conf"

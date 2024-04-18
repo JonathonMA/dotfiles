@@ -16,6 +16,9 @@ done
 tmpdir="$(mktemp -d)"
 trap '{ rm -rf "${tmpdir?}"; }' EXIT
 ARIAFILE="$(mktemp -p "$tmpdir" "aria2c.XXXX.txt")"
+CHANGEFILE="$(mktemp -p "$tmpdir" "changes.XXXX")"
+
+rm -f "$CHANGEFILE"
 
 os-font-path() {
   case "$OSTYPE" in
@@ -71,6 +74,7 @@ zip_glob() {
 }
 
 zip_unpack() {
+  touch "$CHANGEFILE"
   target="$1" && shift
   tmp_archive="$1" && shift
 
@@ -84,6 +88,7 @@ tar_glob() {
 }
 
 tar_unpack() {
+  touch "$CHANGEFILE"
   target="$1" && shift
   tmp_archive="$1" && shift
 
@@ -96,6 +101,7 @@ deploy() {
   target="$1" && shift
 
   for file in "$@"; do
+    touch "$CHANGEFILE"
     filename="$(basename "$file")"
     if [ -f "$target/$filename" ]; then
       :
@@ -212,6 +218,15 @@ do_deploy() {
   if [ -s "$ARIAFILE" ]; then
     cat "$ARIAFILE"
     aria2c --auto-file-renaming=false -j16 -i "$ARIAFILE"
+  fi
+
+  if [ "${1:-}" = "--regenerate-fontconfig" ]; then
+    dotfiles-regenerate-fontconfig-nerd-font-symbols.sh
+    if [ -f "$CHANGEFILE" ]; then
+      echo -n "fontlib: Clearing fc-cache..."
+      fc-cache -rf
+      echo "done."
+    fi
   fi
 }
 

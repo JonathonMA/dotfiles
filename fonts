@@ -21,4 +21,4 @@ deploy_font_gh et-book edwardtufte/et-book 65f78029d378dea4a864a395933988b49adf0
 deploy_font_gh et-bembo DavidBarts/ET_Bembo master "ETBembo-*.otf"
 deploy_font_gh_release eb-garamond "georgd/EB-Garamond" "EBGaramond.zip" "EBGaramond*.otf"
 
-do_deploy
+do_deploy "$@"
