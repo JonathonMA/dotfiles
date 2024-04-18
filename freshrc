@@ -42,7 +42,7 @@ fresh JonathonMA/mlocate-encrypted-home locate-home.sh
 
 # Config
 fresh-options --file
-  fresh 'config/*'
+  fresh 'legacy-config/*'
 fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.config/dircolors
