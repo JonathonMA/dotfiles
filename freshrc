@@ -72,10 +72,10 @@ xdg_populate_dir() {
 }
 
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
-xdg_populate xdg/config ~/.config
-xdg_populate xdg/share ~/.local/share
-xdg_populate private/xdg/share ~/.local/share
-xdg_populate private/xdg/config ~/.config
+xdg_populate config ~/.config
+xdg_populate data ~/.local/share
+xdg_populate private/data ~/.local/share
+xdg_populate private/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
 
 # Tmux
@@ -139,10 +139,6 @@ fresh-options
 if [ ! -d ~/.local/share/dotfiles/private ]; then
   git clone git@github.com:JonathonMA/jma-dotfiles-private.git ~/.local/share/dotfiles/private
 fi
-
-for id_file in private/config/git/identity_*; do
-  fresh --file=~/.config/git/"$(basename "$id_file")" "$id_file"
-done
 
 config_git() {
   local config_git_local=${XDG_CONFIG_HOME:-$HOME/.config}/git/local
