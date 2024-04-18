@@ -106,7 +106,7 @@ fresh-options --file="${nvim_path}/lua/vim/config.lua" --marker='--'
 fresh-options
 
 # More XCompose sequences
-fresh kragen/xcompose dotXCompose --file=~/.XCompose
+fresh kragen/xcompose dotXCompose --file=~/.config/X11/xcompose
 
 # Other config
 
