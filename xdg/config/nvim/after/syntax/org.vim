@@ -1,5 +1,7 @@
 hi link @bujo.note Comment
+hi link @bujo.note.inspiration Type
 hi link @bujo.task DiffDelete
+hi link @bujo.task.priority Delimiter
 hi link @bujo.event Conditional
 hi link @bujo.task.complete DiffAdd
 hi link @bujo.event.complete DiffAdd
