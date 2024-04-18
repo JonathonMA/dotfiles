@@ -43,7 +43,6 @@ fresh JonathonMA/mlocate-encrypted-home locate-home.sh
 # Config
 fresh-options --file
   fresh 'config/*'
-  fresh 'private/config/*rc' --ignore-missing
 fresh-options
 fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
@@ -76,6 +75,7 @@ mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
 xdg_populate xdg/config ~/.config
 xdg_populate xdg/share ~/.local/share
 xdg_populate private/xdg/share ~/.local/share
+xdg_populate private/xdg/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
 
 # Tmux
