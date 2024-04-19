@@ -141,8 +141,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/git/config --marker=#
 fresh-options
 
 # Manage fonts
-[ -x "$FRESH_LOCAL/private/fonts" ] && "$FRESH_LOCAL/private/fonts"
-"$FRESH_LOCAL/fonts" --regenerate-fontconfig
+command -v idemfontent >/dev/null && idemfontent --regenerate-fontconfig
 
 # Private
 if [ ! -d ~/.local/share/dotfiles/private ]; then

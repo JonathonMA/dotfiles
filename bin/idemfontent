@@ -1,9 +1,9 @@
-# fontlib.sh -- Install fonts from github
-#   requires aria2c to orchestrate downloading missing files to where they should be
+#!/usr/bin/env bash
+# itemfontent -- Install fonts from github and other sources
+# requires: aria2c, wget, jq
 set -euo pipefail
 
-
-REQUIRED_COMMANDS="aria2c jq"
+REQUIRED_COMMANDS="aria2c wget jq"
 read -a commands <<< "${REQUIRED_COMMANDS}"
 
 for command in "${commands[@]}"; do
@@ -263,3 +263,11 @@ do_deploy() {
 }
 
 font_path="$(os-font-path)"
+
+config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/idemfontent"
+
+for file in "$config_dir/"*.conf; do
+  source "$file"
+done
+
+do_deploy "$@"
