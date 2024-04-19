@@ -54,6 +54,14 @@ xdg_populate() {
   fi
 }
 
+xdg_populate_os() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    xdg_populate macos/"$1" "$2"
+  else
+    xdg_populate linux/"$1" "$2"
+  fi
+}
+
 xdg_populate_dir() {
   target="${FRESH_LOCAL}/$1"
   if [ -d "$2" -a ! -L "$2" ]; then
@@ -74,6 +82,7 @@ xdg_populate_dir() {
 mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
 xdg_populate config ~/.config
 xdg_populate data ~/.local/share
+xdg_populate_os config ~/.config
 xdg_populate private/data ~/.local/share
 xdg_populate private/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
