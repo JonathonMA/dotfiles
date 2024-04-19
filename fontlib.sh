@@ -214,6 +214,38 @@ deploy_fontconfig() {
   deploy "$github" "$ref" "$target" "$@"
 }
 
+function list-mono-fonts() {
+  # fallback
+  echo monospace
+  # NOTE: family is potentially a multi-valued element, and we treat each as a separate font for <alias> purposes
+  fc-list :mono --format '%{[]family{%{family}\n}}' | sort -u
+}
+
+function jq_font-aliases() {
+cat <<JQ
+{
+  "+p_xml": "version=\"1.0\"",
+  "+directive": "DOCTYPE fontconfig SYSTEM \"fonts.dtd\"",
+  fontconfig: {
+    alias: \$fonts | map({family: ., prefer: {family: \$prefer}})
+  },
+}
+JQ
+}
+
+function generate-nerd-font-aliases() {
+  local prefer="$(fc-scan ~/.local/share/fonts/nerd-fonts/SymbolsNerdFontMono-Regular.ttf --format='%{family}')"
+  local tmpfile="$(mktemp -p "$tmpdir" fontconfig.XXX.conf)"
+
+  jq \
+    -n \
+    --arg prefer "$prefer" \
+    --slurpfile fonts <(list-mono-fonts | jq -R) \
+    --from-file <(jq_font-aliases) |\
+    yq -o=xml > "$tmpfile"
+    mv "$tmpfile" "${XDG_CONFIG_HOME:-$HOME/.config}/fontconfig/conf.d/10-nerd-font-symbols.conf"
+}
+
 do_deploy() {
   if [ -s "$ARIAFILE" ]; then
     cat "$ARIAFILE"
@@ -221,7 +253,7 @@ do_deploy() {
   fi
 
   if [ "${1:-}" = "--regenerate-fontconfig" ]; then
-    dotfiles-regenerate-fontconfig-nerd-font-symbols.sh
+    generate-nerd-font-aliases
     if [ -f "$CHANGEFILE" ]; then
       echo -n "fontlib: Clearing fc-cache..."
       fc-cache -rf
