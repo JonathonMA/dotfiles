@@ -11,5 +11,8 @@ checkout = git clone --depth=1 'git@github.com:asdf-vm/asdf-nodejs.git' nodejs
 [asdf/plugins/python]
 checkout = git clone --depth=1 'git@github.com:tuvistavie/asdf-python.git' python
 
+[asdf/plugins/r]
+checkout = git clone --depth=1 'git@github.com:asdf-community/asdf-r.git' r
+
 [fzf]
 checkout = git clone --depth=1 'git@github.com:junegunn/fzf.git' fzf
