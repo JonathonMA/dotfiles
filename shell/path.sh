@@ -10,13 +10,15 @@ path_prepend PATH '/usr/local/sbin'
 path_append PATH '/opt/X11/bin'
 path_append PATH '/usr/games'
 
+# Shim mise until it has a chance to activate for real!
+path_prepend PATH ~/.local/share/mise/shims/
+
 if [ -d /snap/bin ]; then
   path_append PATH "/snap/bin"
 fi
 
 path_prepend PATH "$HOME/.local/bin"
 path_append PATH "$HOME/.cargo/bin"
-path_append PATH "$HOME/.local/share/fzf/bin"
 
 if command -v brew >/dev/null; then
   path_prepend PATH "$(brew --prefix)/opt/coreutils/libexec/gnubin"
