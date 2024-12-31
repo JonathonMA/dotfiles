@@ -1,0 +1,13 @@
+[tools]
+node = "22"
+python = "3"
+ruby = "3"
+
+fzf = "latest"
+"pipx:maestral" = { version= "latest", extras = "maestral-qt,python-systemd" }
+bitwarden = "latest"
+
+yq = "latest"
+
+[settings.python]
+default_packages_file = "~/.config/mise/python_default_packages"
