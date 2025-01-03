@@ -10,5 +10,7 @@ yq = "latest"
 
 "pipx:maestral" = { version= "latest", extras = "maestral-qt,python-systemd" }
 
+"ubi:tinted-theming/tinty" = "latest"
+
 [settings.python]
 default_packages_file = "~/.config/mise/python_default_packages"
