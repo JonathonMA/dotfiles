@@ -27,7 +27,6 @@ ensure_checkout() {
 
   rm "$_tmp"
 }
-ensure_checkout tinted-theming/base16-shell profile_helper.sh
 
 # Shell
 fresh shell/noninteractive.sh
