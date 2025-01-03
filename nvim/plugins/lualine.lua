@@ -1,7 +1,7 @@
 return {
   {'kyazdani42/nvim-web-devicons'},
   {
-    'hoob3rt/lualine.nvim',
+    'ducklin5/lualine.nvim', branch = 'fix/tintedBase16',
     dependencies = {{'kyazdani42/nvim-web-devicons', optional = true}},
     config = function()
       -- TODO: show paste status
