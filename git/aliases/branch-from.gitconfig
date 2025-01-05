@@ -1,3 +1,8 @@
+  branch-trunk = "!f() { git checkout -b "$1" origin/HEAD --no-track; }; f"
+  branch-trunk-regular = !git branch-trunk "$1-`date +%Y%m%d`"
+
+  new-topic = "!f() { git branch-trunk topic/"$1"; }; f"
+
   branch-from = "!f() { git branch $2 origin/$1 --no-track && git co $2; }; f"
   branch-from-regular = "!f() { git branch-from $1 "$2-`date +%Y%m%d`"; }; f"
 

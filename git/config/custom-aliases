@@ -8,3 +8,4 @@
   pu = !git push-upstream
   lm = !git local-master
   ff = !git find-files
+  nt = !git new-topic
