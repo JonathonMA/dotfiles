@@ -6,5 +6,6 @@
   rio = "!git rebase -i --autosquash origin/$(git rev-parse --abbrev-ref HEAD)"
   con = rebase --continue
   branch-point = "!git config --local branch.$(git current-branch).branchpoint"
+  branch-stack = "!f() { branch_point="$(git rev-parse --abbrev-ref @)" && git checkout -b $1 && git branch-point "$branch_point"; }; f"
   rib = "!git rebase -i --autosquash $(git branch-point || git merge-base @{u} origin/develop)"
   rif = "!git rebase -i --autosquash $(git merge-base HEAD origin/develop)"
