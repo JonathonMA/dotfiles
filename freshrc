@@ -41,6 +41,10 @@ if [ -L "$HOME/.ecryptfs" ]; then
   fresh JonathonMA/mlocate-encrypted-home locate-home.sh
 fi
 
+if [ -d ~/.local/share/dotfiles/private ]; then
+  fresh 'private/shell/*'
+fi
+
 # Config
 fresh-options --file
   fresh 'legacy-config/*'
