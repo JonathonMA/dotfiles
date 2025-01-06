@@ -26,7 +26,8 @@ format = "[$path]($style)[$read_only]($read_only_style)"
 truncation_length = 0
 style = "cyan"
 [git_branch]
-format = "\\([$branch]($style)\\) "
+symbol = ""
+format = "[$branch]($style)$symbol "
 style = "blue"
 [jobs]
 format = "[$symbol]($style) "
