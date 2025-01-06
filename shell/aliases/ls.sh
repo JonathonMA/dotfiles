@@ -7,6 +7,7 @@ if has_command eza; then
   alias ll='eza -alF'
   alias la='eza -a'
   alias l='eza --icons -GF'
+  alias l1='l -1'
   alias exa=eza
 else
   alias ll='ls -alF'
