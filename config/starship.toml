@@ -18,7 +18,7 @@ style = "yellow"
 
 [character]
 format = "$symbol "
-success_symbol = "[\\$](yellow)"
+success_symbol = "[\\$](bright-yellow)"
 error_symbol = "[\\$](red)"
 
 [directory]
