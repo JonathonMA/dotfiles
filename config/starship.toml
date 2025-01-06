@@ -1,4 +1,5 @@
 format = """\
+$battery\
 $git_branch\
 $git_commit\
 $git_state\
@@ -6,6 +7,14 @@ $git_status\
 $jobs\
 $directory\
 $character"""
+
+[battery]
+full_symbol = "🔋︎"
+charging_symbol = "⚡︎"
+discharging_symbol = "💀︎"
+[[battery.display]]
+threshold = 100
+style = "yellow"
 
 [character]
 format = "$symbol "
