@@ -4,14 +4,21 @@ python = "3"
 ruby = "3"
 rust = "latest"
 
+bat = "latest"
 bitwarden = "latest"
+cheat = "latest"
+eza = "latest"
 fzf = "latest"
+jq = "latest"
+rg = "latest"
 starship = "latest"
 yq = "latest"
 
 "pipx:maestral" = { version= "latest", extras = "maestral-qt,python-systemd" }
 
 "ubi:tinted-theming/tinty" = "latest"
+
+"cargo:xsv" = "latest"
 
 [settings.python]
 default_packages_file = "~/.config/mise/python_default_packages"
