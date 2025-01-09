@@ -13,3 +13,4 @@
   pull = pull --ff-only
   ss = show --stat -p
   st = status
+  ts = stash show --stat --patch
