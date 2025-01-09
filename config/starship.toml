@@ -1,4 +1,5 @@
 format = """\
+$custom\
 $battery\
 $git_branch\
 $git_commit\
@@ -35,3 +36,10 @@ style = "blue"
 format = "[$symbol]($style) "
 style = "yellow"
 symbol = "ꕚ"
+
+[custom.taskwarrior]
+command = 'task bujo.by:today +READY count'
+when = '[[ $(task bujo.by:today +READY count) -gt 0 ]]'
+symbol = "🯀︎"
+style = "purple"
+format = '[$symbol$output]($style) '
