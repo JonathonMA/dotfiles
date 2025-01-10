@@ -1,5 +1,7 @@
 [tools]
+lua = "latest"
 node = "22"
+perl = "latest"
 python = "3"
 ruby = "3"
 rust = "latest"
