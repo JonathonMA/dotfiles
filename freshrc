@@ -90,6 +90,7 @@ xdg_populate_os config ~/.config
 xdg_populate private/data ~/.local/share
 xdg_populate private/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
+xdg_populate_dir nvim/lib ~/.config/nvim/lua/lib
 
 # Tmux
 fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
