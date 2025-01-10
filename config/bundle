@@ -1,0 +1,8 @@
+---
+BUNDLE_GEM__CHANGELOG: "false"
+BUNDLE_GEM__CI: "github"
+BUNDLE_GEM__COC: "false"
+BUNDLE_GEM__LINTER: "rubocop"
+BUNDLE_GEM__MIT: "false"
+BUNDLE_GEM__TEST: "rspec"
+BUNDLE_GIT__ALLOW_INSECURE: "true"
