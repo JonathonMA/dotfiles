@@ -92,6 +92,10 @@ xdg_populate private/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
 xdg_populate_dir nvim/lib ~/.config/nvim/lua/lib
 
+# NOTE: fake a kind of global biome config, without polluting home too much.
+ln -sf ~/.config/biome.json ~/.local/biome.json
+ln -sf ~/.config/biome.json ~/src/biome.json
+
 # Tmux
 fresh tmux-plugins/tpm . --file=~/.config/tmux/plugins/tpm/
 
