@@ -19,9 +19,11 @@
 
 RS=''
 
+DEFAULT_AUTHOR_FORMAT="%aL" # override with $ git config githelpers.authorFormat %aN
+
 LOG_HASH="%C(always,yellow)%h%C(always,reset)"
 LOG_RELATIVE_TIME="%C(always,green)(%ar)%C(always,reset)"
-LOG_AUTHOR="%C(always,blue)<%aN>%C(always,reset)"
+LOG_AUTHOR="%C(always,blue)<$(git config githelpers.authorFormat || echo "$DEFAULT_AUTHOR_FORMAT")>%C(always,reset)"
 LOG_SUBJECT="%s"
 LOG_REFS="%C(auto)%d%C(reset)"
 
