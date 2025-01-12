@@ -11,12 +11,19 @@ bitwarden = "latest"
 cheat = "latest"
 eza = "latest"
 fzf = "latest"
+gh = "latest"
 jq = "latest"
+neovim = "latest"
+pandoc = "latest"
 rg = "latest"
 starship = "latest"
+usage = "latest"
 yq = "latest"
 
+
 "pipx:maestral" = { version= "latest", extras = "maestral-qt,python-systemd" }
+"pipx:ocrmypdf" = "latest"
+"pipx:yt-dlp" = "latest"
 
 "ubi:tinted-theming/tinty" = "latest"
 
