@@ -31,6 +31,9 @@ ensure_checkout() {
 # Shell
 fresh shell/noninteractive.sh
 fresh shell/has_command_pre.sh
+fresh 'shell/xdg_pre.sh'
+fresh 'shell/xdg/*'
+fresh 'shell/xdg_post.sh'
 fresh 'shell/aliases/*'
 fresh 'shell/config/*'
 fresh shell/has_command_post.sh

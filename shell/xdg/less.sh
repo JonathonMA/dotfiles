@@ -1,0 +1,1 @@
+xdg_cache LESSHISTFILE less_history

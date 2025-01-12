@@ -1,0 +1,1 @@
+xdg_cache HISTFILE bash_history

@@ -1,0 +1,1 @@
+xdg_cache PSQL_HISTORY psql_history
