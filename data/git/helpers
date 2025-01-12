@@ -59,7 +59,7 @@ pretty_git_format() {
     # Replace (2 years, 5 months) with (2 years)
     sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
     # Line columns up based on } delimiter
-    column -s "$RS" -t
+    column --separator "$RS" --table --output-separator=" "
 }
 
 git_page_maybe() {
