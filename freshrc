@@ -54,10 +54,28 @@ fresh-options --file
 fresh-options
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.config/dircolors
 
+xdg_filter_sed() { cat<<SED
+s|\${XDG_CONFIG_HOME}|\${HOME}/.config|g
+s|\${XDG_CACHE_HOME}|\${HOME}/.cache|g
+s|\${XDG_DATA_HOME}|\${HOME}/.local/share|g
+s|\${XDG_STATE_HOME}|\${HOME}/.local/state|g
+SED
+}
+
+# Config
+xdg_filter() {
+  local _xdg_filter="$(mktemp)"
+  xdg_filter_sed > "$_xdg_filter"
+  (cd "${FRESH_LOCAL}/config/xdg-filtered/" && find . -type f) | while read i; do
+    fresh --file=~/.config/"$i" "config/xdg-filtered/$i" --filter="sed -f '$_xdg_filter'"
+  done
+}
+xdg_filter
+
 xdg_populate() {
   if [ -d "$FRESH_LOCAL"/"$1" ]; then
-    (cd "$FRESH_LOCAL"/"$1" && find . -type d -exec mkdir -p "$2"/{} \;)
-    (cd "$FRESH_LOCAL"/"$1" && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/"$1"/{} "$2"/{} \;)
+    (cd "$FRESH_LOCAL"/"$1" && find . -type d -not -path '*xdg-filtered*' -exec mkdir -p "$2"/{} \;)
+    (cd "$FRESH_LOCAL"/"$1" && find . -type f -not -path '*xdg-filtered*' -and -not -name .keep -exec ln -sf "$FRESH_LOCAL"/"$1"/{} "$2"/{} \;)
   fi
 }
 
