@@ -1,1 +1,2 @@
 xdg_cache NODE_REPL_HISTORY node_repl_history
+xdg_config NPM_CONFIG_USERCONFIG npm/npmrc
