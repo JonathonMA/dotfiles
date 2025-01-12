@@ -23,7 +23,7 @@ LOG_HASH="%C(always,yellow)%h%C(always,reset)"
 LOG_RELATIVE_TIME="%C(always,green)(%ar)%C(always,reset)"
 LOG_AUTHOR="%C(always,blue)<%aN>%C(always,reset)"
 LOG_SUBJECT="%s"
-LOG_REFS="%C(always,red)%d%C(always,reset)"
+LOG_REFS="%C(auto)%d%C(reset)"
 
 LOG_FORMAT="$LOG_HASH${RS}$LOG_RELATIVE_TIME${RS}$LOG_AUTHOR${RS}$LOG_REFS $LOG_SUBJECT"
 
@@ -42,7 +42,7 @@ show_git_head() {
 }
 
 pretty_git_log() {
-    git log --graph --pretty="tformat:${LOG_FORMAT}" --no-show-signature $* | pretty_git_format | git_page_maybe
+    git log --graph --color=always --pretty="tformat:${LOG_FORMAT}" --no-show-signature $* | pretty_git_format | git_page_maybe
 }
 
 pretty_git_branch() {
