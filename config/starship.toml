@@ -1,0 +1,25 @@
+format = """\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$jobs\
+$directory\
+$character"""
+
+[character]
+format = "$symbol "
+success_symbol = "[\\$](yellow)"
+error_symbol = "[\\$](red)"
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)"
+truncation_length = 0
+style = "cyan"
+[git_branch]
+format = "\\([$branch]($style)\\) "
+style = "blue"
+[jobs]
+format = "[$symbol]($style) "
+style = "yellow"
+symbol = "ꕚ"
