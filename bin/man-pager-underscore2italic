@@ -1,0 +1,4 @@
+#!/bin/dash
+
+DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+sed -f "$DIR"/underline2italic.sed | exec less "$@"
