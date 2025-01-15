@@ -7,7 +7,7 @@ return {
     opts = { actions = { open_file = { quit_on_open = true, }, }, },
     keys = {
       { "<leader>e", "<cmd>:NvimTreeToggle<cr>", desc = "nvim-tree" },
-      { "<leader>q", "<cmd>:NvimTreeToggle<cr>", desc = "nvim-tree" },
+      { "<leader>q", "<cmd>:NvimTreeFindFileToggle<cr>", desc = "nvim-tree" },
     },
   },
 }
