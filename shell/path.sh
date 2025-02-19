@@ -3,6 +3,10 @@
 
 PATH=$(getconf PATH)
 
+if [ -x /usr/libexec/path_helper ]; then
+  PATH="$(/usr/libexec/path_helper -s | grep ^PATH | cut -f 2 -d\")"
+fi
+
 path_prepend PATH '/usr/sbin'
 path_prepend PATH '/sbin'
 path_prepend PATH '/usr/local/bin'
