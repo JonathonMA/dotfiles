@@ -7,6 +7,10 @@ if [ -x /usr/libexec/path_helper ]; then
   PATH="$(/usr/libexec/path_helper -s | grep ^PATH | cut -f 2 -d\")"
 fi
 
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$( /opt/homebrew/bin/brew shellenv )"
+fi
+
 path_prepend PATH '/usr/sbin'
 path_prepend PATH '/sbin'
 path_prepend PATH '/usr/local/bin'
