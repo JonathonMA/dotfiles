@@ -17,9 +17,7 @@ path_append PATH '/usr/games'
 # Shim mise until it has a chance to activate for real!
 path_prepend PATH ~/.local/share/mise/shims/
 
-if [ -d /snap/bin ]; then
-  path_append PATH "/snap/bin"
-fi
+path_append PATH "/snap/bin"
 
 path_prepend PATH "$HOME/.local/bin"
 
