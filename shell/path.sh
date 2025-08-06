@@ -27,6 +27,7 @@ if command -v brew >/dev/null; then
   path_prepend PATH "$(brew --prefix)/opt/coreutils/libexec/gnubin"
   path_prepend PATH "$(brew --prefix)/opt/findutils/libexec/gnubin"
   path_prepend PATH "$(brew --prefix)/opt/gnu-sed/libexec/gnubin"
+  path_prepend PATH "$(brew --prefix)/opt/util-linux/bin"
 fi
 
 if [ -f "$HOME/.bashrc.local.path" ]; then
