@@ -22,7 +22,6 @@ if [ -d /snap/bin ]; then
 fi
 
 path_prepend PATH "$HOME/.local/bin"
-path_append PATH "$HOME/.cargo/bin"
 
 if command -v brew >/dev/null; then
   path_prepend PATH "$(brew --prefix)/opt/coreutils/libexec/gnubin"
