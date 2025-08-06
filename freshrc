@@ -87,6 +87,10 @@ xdg_populate_os() {
   fi
 }
 
+xdg_populate_host() {
+  xdg_populate "$1"/"$(hostname)"/"$2" "$3"
+}
+
 xdg_populate_dir() {
   target="${FRESH_LOCAL}/$1"
   if [ -d "$2" -a ! -L "$2" ]; then
@@ -112,6 +116,8 @@ xdg_populate private/data ~/.local/share
 xdg_populate private/config ~/.config
 xdg_populate_dir nvim/plugins ~/.config/nvim/lua/plugins
 xdg_populate_dir nvim/lib ~/.config/nvim/lua/lib
+xdg_populate_host private/host config ~/.config
+xdg_populate_host private/host data ~/.local/share
 
 # NOTE: fake a kind of global biome config, without polluting home too much.
 ln -sf ~/.config/biome.json ~/.local/biome.json
